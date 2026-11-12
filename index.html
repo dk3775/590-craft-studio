@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en-IN" data-mode="lite">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- CUSTOMIZE: page title + description (shown in Google & ad previews) -->
+  <title>590 Craft Studio · Aluminium Windows, Glass Partitions &amp; Signboards in Surat &amp; Rajkot</title>
+  <meta name="description" content="Aluminium windows and doors (Domal &amp; 2.5 series), toughened glass partitions, elevation work, LED / acrylic / ACP / SS backlit signboards, name plates and glass railings in Surat and Rajkot. Get a quote on WhatsApp.">
+  <meta name="theme-color" content="#121316">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Open Graph (link previews on WhatsApp / Facebook). CUSTOMIZE og:url after deploy. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="590 Craft Studio · Aluminium &amp; Signage · Surat &amp; Rajkot">
+  <meta property="og:description" content="Windows, doors, glass partitions, elevation, signboards, name plates and glass railings. Quote on WhatsApp.">
+  <meta property="og:image" content="/assets/og-image.png">
+  <meta property="og:url" content="https://YOUR-SITE.netlify.app/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Decide 3D vs lite layout before first paint (tiny, synchronous) -->
+  <script src="js/mode.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=Manrope:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- GSAP core + ScrollTrigger (free, public plugins only — no Club plugins) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
+  <script type="module" src="js/main.js"></script>
+
+  <!-- CUSTOMIZE: structured data for Google (name, phone, address once known) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "590 Craft Studio",
+    "description": "Aluminium fabrication, glass partitions, elevation work, signboards, name plates and glass railings.",
+    "telephone": "+91-90000-00000",
+    "email": "hello@aluform.example",
+    "areaServed": [{"@type": "City", "name": "Surat"}, {"@type": "City", "name": "Rajkot"}]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="site-header" id="top">
+    <div class="site-header__inner">
+      <a class="brand" href="#top" aria-label="590 Craft Studio — back to top">
+        <img class="brand__logo" src="assets/logo.svg" width="36" height="36" alt="">
+        <span class="brand__text"><span class="brand__name">590 Craft Studio</span><span class="brand__tag">Aluminium &amp; Signage</span></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle__bars" aria-hidden="true"></span><span class="visually-hidden">Menu</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#fabrication">Fabrication</a></li>
+          <li><a href="#signboards">Signboards</a></li>
+          <li><a href="#nameplates">Name plates</a></li>
+          <li><a href="#railings">Railings</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--wa btn--sm header-wa" href="https://wa.me/919000000000?text=Hi%20590%20Craft%20Studio%2C%20I%20would%20like%20a%20quote." data-wa target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ======================= SCROLL JOURNEY (HERO) =======================
+         Desktop (data-mode="3d"): Three.js building, pinned + scrubbed by ScrollTrigger.
+         Mobile / reduced motion / no WebGL (data-mode="lite"): SVG building + cards.
+         The <article class="step"> blocks below are used by BOTH versions.
+         CUSTOMIZE: all text in the steps. Keep data-step values unchanged
+         (they link each card to its 3D hotspot / SVG hotspot). -->
+    <section class="journey" id="journey" aria-label="Product tour of a building">
+      <div class="journey__stage">
+        <div class="journey__sky" aria-hidden="true"></div>
+        <div class="journey__canvas" id="scene-root" aria-hidden="true">
+          <div class="scene-loader"><span></span>Loading 3D building…</div>
+        </div>
+
+        <!-- Lightweight illustrated building (mobile & fallback) -->
+        <figure class="journey__lite" aria-hidden="true">
+          <svg class="lite-svg" id="lite-svg" viewBox="0 0 420 520" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <defs>
+              <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#151a24"/><stop offset=".7" stop-color="#2a2522"/><stop offset="1" stop-color="#4a3424"/>
+              </linearGradient>
+              <linearGradient id="g-wall" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#cfc8bd"/><stop offset="1" stop-color="#a9a399"/>
+              </linearGradient>
+              <linearGradient id="g-acp" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#d7b77c"/><stop offset=".5" stop-color="#a98450"/><stop offset="1" stop-color="#7d6040"/>
+              </linearGradient>
+              <linearGradient id="g-glass" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#9fc2d6" stop-opacity=".55"/><stop offset="1" stop-color="#3b5566" stop-opacity=".45"/>
+              </linearGradient>
+              <linearGradient id="g-glow" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffcf8a"/><stop offset="1" stop-color="#e48a3c"/>
+              </linearGradient>
+              <filter id="f-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+            </defs>
+            <rect x="-400" y="-400" width="1220" height="1320" fill="url(#g-sky)"/>
+            <g id="lite-world">
+              <!-- ground -->
+              <rect x="-200" y="470" width="820" height="200" fill="#1c1c1f"/>
+              <rect x="20" y="468" width="380" height="4" fill="#3a3834"/>
+              <!-- parapet + body -->
+              <rect x="86" y="66" width="248" height="26" fill="#2d3035"/>
+              <rect x="90" y="92" width="240" height="378" fill="url(#g-wall)"/>
+              <!-- floor bands -->
+              <g fill="#2d3035">
+                <rect x="86" y="132" width="248" height="5"/><rect x="86" y="176" width="248" height="5"/>
+                <rect x="86" y="220" width="248" height="5"/><rect x="86" y="264" width="248" height="5"/>
+                <rect x="86" y="308" width="248" height="5"/><rect x="86" y="352" width="248" height="5"/>
+                <rect x="86" y="396" width="248" height="6"/>
+              </g>
+              <!-- front windows (3 per floor x 7 floors) -->
+              <g id="lite-windows">
+                <rect x="98" y="101" width="46" height="25" fill="url(#g-glow)" opacity=".85"/>
+                <rect x="98" y="101" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M113.3 101v25M128.7 101v25" stroke="#c9ced4" stroke-width="1"/>
+                <rect x="150" y="101" width="46" height="25" fill="#23262c"/>
+                <rect x="150" y="101" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M165.3 101v25M180.7 101v25" stroke="#c9ced4" stroke-width="1"/>
+                <rect x="202" y="101" width="46" height="25" fill="url(#g-glow)" opacity=".85"/>
+                <rect x="202" y="101" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M217.3 101v25M232.7 101v25" stroke="#c9ced4" stroke-width="1"/>
+                <rect x="98" y="145" width="46" height="25" fill="url(#g-glow)" opacity=".85"/>
+                <rect x="98" y="145" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M121 145v25" stroke="#c9ced4" stroke-width="1.6"/>
+                <rect x="150" y="145" width="46" height="25" fill="url(#g-glow)" opacity=".85"/>
+                <rect x="150" y="145" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M173 145v25" stroke="#c9ced4" stroke-width="1.6"/>
+                <rect x="202" y="145" width="46" height="25" fill="#23262c"/>
+                <rect x="202" y="145" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M225 145v25" stroke="#c9ced4" stroke-width="1.6"/>
+                <rect x="98" y="189" width="46" height="25" fill="#23262c"/>
+                <rect x="98" y="189" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M113.3 189v25M128.7 189v25" stroke="#c9ced4" stroke-width="1"/>
+                <rect x="150" y="189" width="46" height="25" fill="url(#g-glow)" opacity=".85"/>
+                <rect x="150" y="189" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M165.3 189v25M180.7 189v25" stroke="#c9ced4" stroke-width="1"/>
+                <rect x="202" y="189" width="46" height="25" fill="url(#g-glow)" opacity=".85"/>
+                <rect x="202" y="189" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M217.3 189v25M232.7 189v25" stroke="#c9ced4" stroke-width="1"/>
+                <rect x="98" y="233" width="46" height="25" fill="url(#g-glow)" opacity=".85"/>
+                <rect x="98" y="233" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M121 233v25" stroke="#c9ced4" stroke-width="1.6"/>
+                <rect x="150" y="233" width="46" height="25" fill="#23262c"/>
+                <rect x="150" y="233" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M173 233v25" stroke="#c9ced4" stroke-width="1.6"/>
+                <rect x="202" y="233" width="46" height="25" fill="#23262c"/>
+                <rect x="202" y="233" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M225 233v25" stroke="#c9ced4" stroke-width="1.6"/>
+                <rect x="98" y="277" width="46" height="25" fill="url(#g-glow)" opacity=".85"/>
+                <rect x="98" y="277" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M113.3 277v25M128.7 277v25" stroke="#c9ced4" stroke-width="1"/>
+                <rect x="150" y="277" width="46" height="25" fill="url(#g-glow)" opacity=".85"/>
+                <rect x="150" y="277" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M165.3 277v25M180.7 277v25" stroke="#c9ced4" stroke-width="1"/>
+                <rect x="202" y="277" width="46" height="25" fill="url(#g-glow)" opacity=".85"/>
+                <rect x="202" y="277" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M217.3 277v25M232.7 277v25" stroke="#c9ced4" stroke-width="1"/>
+                <rect x="98" y="321" width="46" height="25" fill="#23262c"/>
+                <rect x="98" y="321" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M121 321v25" stroke="#c9ced4" stroke-width="1.6"/>
+                <rect x="150" y="321" width="46" height="25" fill="url(#g-glow)" opacity=".85"/>
+                <rect x="150" y="321" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M173 321v25" stroke="#c9ced4" stroke-width="1.6"/>
+                <rect x="202" y="321" width="46" height="25" fill="#23262c"/>
+                <rect x="202" y="321" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M225 321v25" stroke="#c9ced4" stroke-width="1.6"/>
+                <rect x="98" y="365" width="46" height="25" fill="url(#g-glow)" opacity=".85"/>
+                <rect x="98" y="365" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M113.3 365v25M128.7 365v25" stroke="#c9ced4" stroke-width="1"/>
+                <rect x="150" y="365" width="46" height="25" fill="#23262c"/>
+                <rect x="150" y="365" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M165.3 365v25M180.7 365v25" stroke="#c9ced4" stroke-width="1"/>
+                <rect x="202" y="365" width="46" height="25" fill="url(#g-glow)" opacity=".85"/>
+                <rect x="202" y="365" width="46" height="25" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.3"/>
+                <path d="M217.3 365v25M232.7 365v25" stroke="#c9ced4" stroke-width="1"/>
+              </g>
+              <!-- east ACP elevation -->
+              <g class="lite-acp">
+                <rect x="256" y="92" width="74" height="304" fill="url(#g-acp)"/>
+                <g fill="#2d3035">
+                  <rect x="256" y="92" width="4" height="304"/><rect x="281" y="92" width="3" height="304"/>
+                  <rect x="305" y="92" width="3" height="304"/><rect x="326" y="92" width="4" height="304"/>
+                </g>
+                <g fill="url(#g-glass)"><rect x="285" y="100" width="19" height="288"/></g>
+              </g>
+              <!-- west balconies with glass railings -->
+              <g id="lite-balconies">
+                <rect x="56" y="98" width="34" height="34" fill="url(#g-glow)" opacity=".55"/>
+                <rect x="52" y="131" width="38" height="5" fill="#2d3035"/>
+                <rect x="53" y="115" width="37" height="16" fill="url(#g-glass)" stroke="#dfe6ea" stroke-opacity=".7" stroke-width=".8"/>
+                <path d="M53 115h37M71 115v16" stroke="#c9ced4" stroke-width="1.2"/>
+                <rect x="56" y="142" width="34" height="34" fill="#23262c" opacity="1"/>
+                <rect x="52" y="175" width="38" height="5" fill="#2d3035"/>
+                <rect x="53" y="159" width="37" height="16" fill="url(#g-glass)" stroke="#dfe6ea" stroke-opacity=".7" stroke-width=".8"/>
+                <path d="M53 159h37M71 159v16" stroke="#c9ced4" stroke-width="1.2"/>
+                <rect x="56" y="186" width="34" height="34" fill="url(#g-glow)" opacity=".55"/>
+                <rect x="52" y="219" width="38" height="5" fill="#2d3035"/>
+                <rect x="53" y="203" width="37" height="16" fill="url(#g-glass)" stroke="#dfe6ea" stroke-opacity=".7" stroke-width=".8"/>
+                <path d="M53 203h37M71 203v16" stroke="#c9ced4" stroke-width="1.2"/>
+                <rect x="56" y="230" width="34" height="34" fill="url(#g-glow)" opacity=".55"/>
+                <rect x="52" y="263" width="38" height="5" fill="#2d3035"/>
+                <rect x="53" y="247" width="37" height="16" fill="url(#g-glass)" stroke="#dfe6ea" stroke-opacity=".7" stroke-width=".8"/>
+                <path d="M53 247h37M71 247v16" stroke="#c9ced4" stroke-width="1.2"/>
+                <rect x="56" y="274" width="34" height="34" fill="#23262c" opacity="1"/>
+                <rect x="52" y="307" width="38" height="5" fill="#2d3035"/>
+                <rect x="53" y="291" width="37" height="16" fill="url(#g-glass)" stroke="#dfe6ea" stroke-opacity=".7" stroke-width=".8"/>
+                <path d="M53 291h37M71 291v16" stroke="#c9ced4" stroke-width="1.2"/>
+                <rect x="56" y="318" width="34" height="34" fill="url(#g-glow)" opacity=".55"/>
+                <rect x="52" y="351" width="38" height="5" fill="#2d3035"/>
+                <rect x="53" y="335" width="37" height="16" fill="url(#g-glass)" stroke="#dfe6ea" stroke-opacity=".7" stroke-width=".8"/>
+                <path d="M53 335h37M71 335v16" stroke="#c9ced4" stroke-width="1.2"/>
+                <rect x="56" y="362" width="34" height="34" fill="url(#g-glow)" opacity=".55"/>
+                <rect x="52" y="395" width="38" height="5" fill="#2d3035"/>
+                <rect x="53" y="379" width="37" height="16" fill="url(#g-glass)" stroke="#dfe6ea" stroke-opacity=".7" stroke-width=".8"/>
+                <path d="M53 379h37M71 379v16" stroke="#c9ced4" stroke-width="1.2"/>
+              </g>
+              <!-- ground floor -->
+              <rect x="90" y="402" width="166" height="68" fill="#2a2c30"/>
+              <rect x="104" y="410" width="66" height="5" fill="#16171a"/>
+              <circle cx="118" cy="417" r="1.6" fill="#ffd79a"/><circle cx="137" cy="417" r="1.6" fill="#ffd79a"/><circle cx="156" cy="417" r="1.6" fill="#ffd79a"/>
+              <!-- entrance door -->
+              <rect x="118" y="420" width="38" height="50" fill="url(#g-glow)" opacity=".75"/>
+              <rect x="118" y="420" width="38" height="50" fill="none" stroke="#c9ced4" stroke-width="2"/>
+              <line x1="137" y1="420" x2="137" y2="470" stroke="#c9ced4" stroke-width="2"/>
+              <!-- lobby glazing + partitions -->
+              <rect x="172" y="410" width="82" height="60" fill="#ffc98a" opacity=".55"/>
+              <g stroke="#e7edf2" stroke-opacity=".9" stroke-width="1.2">
+                <line x1="196" y1="420" x2="196" y2="470"/><line x1="226" y1="420" x2="226" y2="470"/>
+                <line x1="186" y1="420" x2="240" y2="420"/>
+              </g>
+              <rect x="172" y="410" width="82" height="60" fill="url(#g-glass)"/>
+              <g stroke="#c9ced4" stroke-width="1.6" fill="none"><rect x="172" y="410" width="82" height="60"/><line x1="213" y1="410" x2="213" y2="470"/></g>
+              <!-- shop + signboard -->
+              <rect x="256" y="402" width="74" height="68" fill="#202226"/>
+              <rect x="258" y="404" width="70" height="14" fill="#141518"/>
+              <text x="293" y="415" text-anchor="middle" class="lite-signtext" filter="url(#f-glow)">590 CRAFT STUDIO</text>
+              <text x="293" y="415" text-anchor="middle" class="lite-signtext">590 CRAFT STUDIO</text>
+              <rect x="262" y="424" width="62" height="46" fill="url(#g-glass)" stroke="#c9ced4" stroke-width="1.4"/>
+              <!-- gate + name plate -->
+              <rect x="340" y="452" width="20" height="18" fill="#3a3834"/>
+              <rect x="360" y="428" width="20" height="42" fill="#4a4741"/>
+              <rect x="356" y="424" width="28" height="5" fill="#2d3035"/>
+              <rect x="362" y="438" width="16" height="12" rx="1" fill="#d9dde1" stroke="#ffcf8a" stroke-width=".8"/>
+              <line x1="365" y1="443" x2="375" y2="443" stroke="#2d3035" stroke-width="1.4"/>
+              <line x1="366" y1="446.5" x2="374" y2="446.5" stroke="#2d3035" stroke-width=".8"/>
+              <rect x="380" y="452" width="40" height="18" fill="#3a3834"/>
+              <!-- trees -->
+              <g fill="#1f2a24"><circle cx="40" cy="440" r="22"/><circle cx="58" cy="452" r="16"/><circle cx="404" cy="430" r="18"/></g>
+              <!-- hotspots -->
+              <g class="lite-hs" data-hs="windows"><circle class="lite-hs__ring" cx="172" cy="210" r="12"/><circle class="lite-hs__dot" cx="172" cy="210" r="4"/></g>
+              <g class="lite-hs" data-hs="doors"><circle class="lite-hs__ring" cx="137" cy="446" r="12"/><circle class="lite-hs__dot" cx="137" cy="446" r="4"/></g>
+              <g class="lite-hs" data-hs="partition"><circle class="lite-hs__ring" cx="212" cy="442" r="12"/><circle class="lite-hs__dot" cx="212" cy="442" r="4"/></g>
+              <g class="lite-hs" data-hs="elevation"><circle class="lite-hs__ring" cx="293" cy="200" r="12"/><circle class="lite-hs__dot" cx="293" cy="200" r="4"/></g>
+              <g class="lite-hs" data-hs="signboard"><circle class="lite-hs__ring" cx="293" cy="411" r="12"/><circle class="lite-hs__dot" cx="293" cy="411" r="4"/></g>
+              <g class="lite-hs" data-hs="nameplate"><circle class="lite-hs__ring" cx="370" cy="444" r="12"/><circle class="lite-hs__dot" cx="370" cy="444" r="4"/></g>
+              <g class="lite-hs" data-hs="railings"><circle class="lite-hs__ring" cx="68" cy="292" r="12"/><circle class="lite-hs__dot" cx="68" cy="292" r="4"/></g>
+            </g>
+          </svg>
+        </figure>
+
+        <div class="hotspots" id="hotspots" aria-label="Building hotspots"></div>
+
+        <div class="journey__steps">
+          <!-- 00 · INTRO -->
+          <article class="step step--intro" data-step="intro" data-label="Overview">
+            <div class="step__card">
+              <p class="eyebrow">Aluminium &amp; Signage · Surat &amp; Rajkot</p>
+              <h1 class="hero-title">Every window, rail &amp; sign on a building<span class="hero-title__accent"> — made by one team.</span></h1>
+              <p class="step__text">Aluminium windows, doors and glass partitions, facade elevation, LED and SS backlit signboards, name plates and glass railings — measured, fabricated and installed for homes, shops and housing societies.</p>
+              <div class="step__actions">
+                <a class="btn btn--wa" href="https://wa.me/919000000000?text=Hi%20590%20Craft%20Studio%2C%20I%20would%20like%20a%20quote." data-wa target="_blank" rel="noopener">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Get a quote on WhatsApp
+                </a>
+                <a class="btn btn--ghost" href="#fabrication">See products</a>
+              </div>
+              <p class="scroll-hint" aria-hidden="true"><span class="scroll-hint__line"></span>Scroll to explore the building</p>
+            </div>
+          </article>
+
+          <!-- 01 · WINDOWS -->
+          <article class="step" data-step="windows" data-label="Aluminium windows">
+            <div class="step__card">
+              <p class="eyebrow"><span class="step__num">01</span> Aluminium fabrication</p>
+              <h2 class="step__title">Aluminium windows</h2>
+              <p class="step__text">Sliding and openable windows in strong aluminium sections, fitted with the glass you choose.</p>
+              <dl class="opts">
+                <div class="opts__group"><dt>Series</dt><dd><ul class="chips"><li>Domal series</li><li>2.5 series</li></ul></dd></div>
+                <div class="opts__group"><dt>Glass</dt><dd><ul class="chips"><li>Toughened glass</li><li>5mm</li><li>12mm</li></ul></dd></div>
+              </dl>
+              <div class="step__actions">
+                <a class="btn btn--wa btn--sm" href="https://wa.me/919000000000" data-wa data-wa-text="Hi 590 Craft Studio, I'm interested in aluminium windows." target="_blank" rel="noopener">Ask about windows</a>
+                <a class="link-arrow" href="#fabrication">Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 02 · DOORS -->
+          <article class="step" data-step="doors" data-label="Aluminium doors">
+            <div class="step__card">
+              <p class="eyebrow"><span class="step__num">02</span> Aluminium fabrication</p>
+              <h2 class="step__title">Aluminium &amp; glass doors</h2>
+              <p class="step__text">Entrance, balcony and sliding doors with aluminium frames — slim sightlines, smooth operation.</p>
+              <dl class="opts">
+                <div class="opts__group"><dt>Series</dt><dd><ul class="chips"><li>Domal series</li><li>2.5 series</li></ul></dd></div>
+                <div class="opts__group"><dt>Glass</dt><dd><ul class="chips"><li>Toughened glass</li><li>5mm</li><li>12mm</li></ul></dd></div>
+              </dl>
+              <div class="step__actions">
+                <a class="btn btn--wa btn--sm" href="https://wa.me/919000000000" data-wa data-wa-text="Hi 590 Craft Studio, I'm interested in aluminium doors." target="_blank" rel="noopener">Ask about doors</a>
+                <a class="link-arrow" href="#fabrication">Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 03 · GLASS PARTITIONS -->
+          <article class="step" data-step="partition" data-label="Glass partitions">
+            <div class="step__card">
+              <p class="eyebrow"><span class="step__num">03</span> Aluminium fabrication</p>
+              <h2 class="step__title">Glass partitions</h2>
+              <p class="step__text">Bright, open offices, showrooms and lobbies — glass partitions set in clean aluminium profiles.</p>
+              <dl class="opts">
+                <div class="opts__group"><dt>Glass</dt><dd><ul class="chips"><li>Toughened glass</li><li>5mm</li><li>12mm</li></ul></dd></div>
+                <div class="opts__group"><dt>Framing</dt><dd><ul class="chips"><li>Aluminium sections</li></ul></dd></div>
+              </dl>
+              <div class="step__actions">
+                <a class="btn btn--wa btn--sm" href="https://wa.me/919000000000" data-wa data-wa-text="Hi 590 Craft Studio, I'm interested in glass partitions." target="_blank" rel="noopener">Ask about partitions</a>
+                <a class="link-arrow" href="#fabrication">Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 04 · ELEVATION -->
+          <article class="step" data-step="elevation" data-label="Elevation work">
+            <div class="step__card">
+              <p class="eyebrow"><span class="step__num">04</span> Aluminium fabrication</p>
+              <h2 class="step__title">Elevation work</h2>
+              <p class="step__text">Give the building a face: aluminium-framed facade glazing and ACP cladding for homes, shops and commercial buildings.</p>
+              <dl class="opts">
+                <div class="opts__group"><dt>Cladding</dt><dd><ul class="chips"><li>ACP sheets</li><li>Aluminium framing</li></ul></dd></div>
+                <div class="opts__group"><dt>Glass</dt><dd><ul class="chips"><li>Toughened glass</li><li>5mm</li><li>12mm</li></ul></dd></div>
+              </dl>
+              <div class="step__actions">
+                <a class="btn btn--wa btn--sm" href="https://wa.me/919000000000" data-wa data-wa-text="Hi 590 Craft Studio, I'm interested in elevation / ACP work." target="_blank" rel="noopener">Ask about elevation</a>
+                <a class="link-arrow" href="#fabrication">Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 05 · SIGNBOARDS -->
+          <article class="step" data-step="signboard" data-label="Signboards">
+            <div class="step__card">
+              <p class="eyebrow"><span class="step__num">05</span> Signboards</p>
+              <h2 class="step__title">Signboards that glow</h2>
+              <p class="step__text">Shop fronts, showrooms and offices — boards that are easy to read by day and stand out at night.</p>
+              <dl class="opts">
+                <div class="opts__group"><dt>Type</dt><dd><ul class="chips"><li>LED signboards</li><li>SS backlit signboards</li><li>Acrylic sheet</li><li>ACP sheet</li></ul></dd></div>
+                <div class="opts__group"><dt>Framing</dt><dd><ul class="chips"><li>MS framing</li><li>Aluminium framing</li></ul></dd></div>
+              </dl>
+              <div class="step__actions">
+                <a class="btn btn--wa btn--sm" href="https://wa.me/919000000000" data-wa data-wa-text="Hi 590 Craft Studio, I'm interested in a signboard." target="_blank" rel="noopener">Ask about signboards</a>
+                <a class="link-arrow" href="#signboards">Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 06 · NAME PLATES -->
+          <article class="step" data-step="nameplate" data-label="Name plates">
+            <div class="step__card">
+              <p class="eyebrow"><span class="step__num">06</span> Name plates</p>
+              <h2 class="step__title">Name plates</h2>
+              <p class="step__text">A proud first impression at the gate — for a single home or an entire housing society.</p>
+              <dl class="opts">
+                <div class="opts__group"><dt>For</dt><dd><ul class="chips"><li>Homes</li><li>Full societies</li></ul></dd></div>
+              </dl>
+              <div class="step__actions">
+                <a class="btn btn--wa btn--sm" href="https://wa.me/919000000000" data-wa data-wa-text="Hi 590 Craft Studio, I'm interested in a name plate." target="_blank" rel="noopener">Ask about name plates</a>
+                <a class="link-arrow" href="#nameplates">Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 07 · GLASS RAILINGS -->
+          <article class="step" data-step="railings" data-label="Glass railings">
+            <div class="step__card">
+              <p class="eyebrow"><span class="step__num">07</span> Glass railings</p>
+              <h2 class="step__title">Glass railings for houses</h2>
+              <p class="step__text">Open up balconies, terraces and staircases with safe, clear glass railings that don't block the view.</p>
+              <dl class="opts">
+                <div class="opts__group"><dt>Glass</dt><dd><ul class="chips"><li>Toughened glass</li><li>12mm</li></ul></dd></div>
+                <div class="opts__group"><dt>Where</dt><dd><ul class="chips"><li>Balconies</li><li>Terraces</li><li>Staircases</li></ul></dd></div>
+              </dl>
+              <div class="step__actions">
+                <a class="btn btn--wa btn--sm" href="https://wa.me/919000000000" data-wa data-wa-text="Hi 590 Craft Studio, I'm interested in glass railings." target="_blank" rel="noopener">Ask about railings</a>
+                <a class="link-arrow" href="#railings">Details</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <ol class="journey__rail" id="journey-rail" aria-hidden="true"></ol>
+      </div>
+    </section>
+
+    <!-- ========================= PRODUCT DETAILS ========================= -->
+    <!-- 1 · FABRICATION -->
+    <section class="product" id="fabrication" aria-labelledby="fab-title">
+      <div class="container product__grid">
+        <header class="product__head reveal">
+          <p class="eyebrow"><span class="step__num">01</span> Aluminium fabrication</p>
+          <h2 class="section-title" id="fab-title">Windows, doors, partitions &amp; <em>elevation</em></h2>
+          <p class="lead">Aluminium sections cut, assembled and fitted on site — with the series and glass that suit your budget, size and use.</p>
+        </header>
+
+        <figure class="product__art reveal" aria-hidden="true">
+          <svg viewBox="0 0 520 390" class="art">
+            <defs>
+              <linearGradient id="a-alu" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3e6ea"/><stop offset=".5" stop-color="#9aa1a8"/><stop offset="1" stop-color="#d0d4d8"/></linearGradient>
+              <linearGradient id="a-gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a8cde0" stop-opacity=".5"/><stop offset="1" stop-color="#4a6d80" stop-opacity=".35"/></linearGradient>
+            </defs>
+            <!-- Domal window -->
+            <g transform="translate(24 30)">
+              <rect width="210" height="250" rx="14" fill="url(#a-alu)"/>
+              <rect x="14" y="14" width="182" height="222" rx="9" fill="#1b1d21"/>
+              <rect x="22" y="22" width="80" height="206" rx="7" fill="url(#a-gl)" stroke="#cfd4d9" stroke-width="5"/>
+              <rect x="108" y="22" width="80" height="206" rx="7" fill="url(#a-gl)" stroke="#cfd4d9" stroke-width="5"/>
+              <path d="M40 50 70 40M40 70 85 55" stroke="#fff" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/>
+              <text x="105" y="280" text-anchor="middle" class="art-label">DOMAL SERIES</text>
+              <text x="105" y="298" text-anchor="middle" class="art-sub">rounded profile</text>
+            </g>
+            <!-- 2.5 series sliding -->
+            <g transform="translate(276 30)">
+              <rect width="220" height="250" rx="3" fill="url(#a-alu)"/>
+              <rect x="10" y="10" width="200" height="230" fill="#1b1d21"/>
+              <rect x="16" y="16" width="110" height="218" fill="url(#a-gl)" stroke="#cfd4d9" stroke-width="6"/>
+              <rect x="94" y="22" width="110" height="206" fill="url(#a-gl)" stroke="#bfc5cb" stroke-width="6"/>
+              <path d="M160 105v40" stroke="#e8ebee" stroke-width="5" stroke-linecap="round"/>
+              <path d="M130 250h-60m0 0 10-6m-10 6 10 6" stroke="var(--gold)" stroke-width="2" fill="none"/>
+              <text x="110" y="280" text-anchor="middle" class="art-label">2.5 SERIES</text>
+              <text x="110" y="298" text-anchor="middle" class="art-sub">sliding section</text>
+            </g>
+            <!-- glass thickness scale -->
+            <g transform="translate(24 372)" class="art-sub">
+              <text x="0" y="0">GLASS</text>
+              <rect x="70" y="-9" width="6" height="12" fill="#8fbcd1"/><text x="82" y="0">5mm</text>
+              <rect x="150" y="-9" width="14" height="12" fill="#8fbcd1"/><text x="170" y="0">12mm</text>
+              <rect x="240" y="-9" width="14" height="12" fill="#8fbcd1" stroke="var(--gold)" stroke-width="1.5"/><text x="260" y="0">Toughened</text>
+            </g>
+          </svg>
+        </figure>
+
+        <div class="product__body">
+          <div class="spec-block reveal">
+            <h3 class="spec-block__title">What we make</h3>
+            <ul class="tile-list">
+              <li class="tile"><span class="tile__k">Windows</span><span class="tile__v">Sliding &amp; openable aluminium windows</span></li>
+              <li class="tile"><span class="tile__k">Doors</span><span class="tile__v">Entrance, balcony &amp; sliding doors</span></li>
+              <li class="tile"><span class="tile__k">Glass partitions</span><span class="tile__v">Offices, showrooms, lobbies &amp; cabins</span></li>
+              <li class="tile"><span class="tile__k">Elevation work</span><span class="tile__v">Facade glazing &amp; ACP cladding</span></li>
+            </ul>
+          </div>
+
+          <div class="spec-block reveal">
+            <h3 class="spec-block__title">Choose your series</h3>
+            <div class="option-cards">
+              <div class="option-card">
+                <p class="option-card__tag">Series</p>
+                <h4>Domal series</h4>
+                <p>The popular rounded-edge (domal) aluminium profile — a neat, finished look for home windows and doors.</p>
+              </div>
+              <div class="option-card">
+                <p class="option-card__tag">Series</p>
+                <h4>2.5 series</h4>
+                <p>A sturdy, economical sliding section for windows and doors in homes, shops and offices.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-block reveal">
+            <h3 class="spec-block__title">Choose your glass</h3>
+            <div class="option-cards option-cards--3">
+              <div class="option-card">
+                <p class="option-card__tag">Glass</p>
+                <h4>Toughened glass</h4>
+                <p>Safety glass, much stronger than ordinary glass. Recommended for doors, partitions and railings.</p>
+              </div>
+              <div class="option-card">
+                <p class="option-card__tag">Thickness</p>
+                <h4>5mm</h4>
+                <p>Lighter glass, commonly used in standard window shutters.</p>
+              </div>
+              <div class="option-card">
+                <p class="option-card__tag">Thickness</p>
+                <h4>12mm</h4>
+                <p>Thick, rigid glass for large panels, partitions and frameless doors.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="photo-row" data-photos="fabrication" hidden>
+            <!-- Real photos appear here when useProjectPhotos = true in js/config.js -->
+            <img data-src="assets/img/fabrication-1.jpg" alt="Aluminium windows installed by 590 Craft Studio (replace with real description)" width="800" height="600" loading="lazy" decoding="async">
+            <img data-src="assets/img/fabrication-2.jpg" alt="Glass partition installed by 590 Craft Studio (replace with real description)" width="800" height="600" loading="lazy" decoding="async">
+            <img data-src="assets/img/fabrication-3.jpg" alt="Building elevation work by 590 Craft Studio (replace with real description)" width="800" height="600" loading="lazy" decoding="async">
+          </div>
+
+          <a class="btn btn--wa reveal" href="https://wa.me/919000000000" data-wa data-wa-text="Hi 590 Craft Studio, I need a quote for aluminium fabrication (windows / doors / partitions / elevation)." target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Quote for fabrication
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · SIGNBOARDS -->
+    <section class="product product--alt" id="signboards" aria-labelledby="sign-title">
+      <div class="container product__grid">
+        <header class="product__head reveal">
+          <p class="eyebrow"><span class="step__num">02</span> Signboards</p>
+          <h2 class="section-title" id="sign-title">Signboards that work <em>day &amp; night</em></h2>
+          <p class="lead">From a neighbourhood shop to a showroom facade — designed, fabricated on a strong frame and installed.</p>
+        </header>
+
+        <figure class="product__art reveal" aria-hidden="true">
+          <svg viewBox="0 0 520 390" class="art">
+            <defs>
+              <filter id="a-glow" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="10"/></filter>
+              <linearGradient id="a-ss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1f3f5"/><stop offset=".5" stop-color="#9ea5ab"/><stop offset="1" stop-color="#d9dde1"/></linearGradient>
+            </defs>
+            <!-- exploded layers -->
+            <g transform="translate(40 40)">
+              <g transform="skewY(-8)">
+                <rect x="0" y="40" width="300" height="110" fill="none" stroke="#7b818a" stroke-width="3" stroke-dasharray="1 0"/>
+                <path d="M0 95h300M75 40v110M150 40v110M225 40v110" stroke="#7b818a" stroke-width="2"/>
+              </g>
+              <g transform="translate(60 40) skewY(-8)">
+                <rect x="0" y="40" width="300" height="110" fill="#26282c"/>
+                <g fill="#ffd28f"><circle cx="40" cy="70" r="5"/><circle cx="100" cy="70" r="5"/><circle cx="160" cy="70" r="5"/><circle cx="220" cy="70" r="5"/><circle cx="270" cy="70" r="5"/><circle cx="40" cy="120" r="5"/><circle cx="100" cy="120" r="5"/><circle cx="160" cy="120" r="5"/><circle cx="220" cy="120" r="5"/><circle cx="270" cy="120" r="5"/></g>
+              </g>
+              <g transform="translate(120 80) skewY(-8)">
+                <rect x="0" y="40" width="300" height="110" rx="4" fill="#15161a" stroke="url(#a-ss)" stroke-width="4"/>
+                <text x="150" y="112" text-anchor="middle" class="art-sign" fill="#ffb347" filter="url(#a-glow)">YOUR SHOP</text>
+                <text x="150" y="112" text-anchor="middle" class="art-sign" fill="url(#a-ss)">YOUR SHOP</text>
+              </g>
+            </g>
+            <g class="art-sub">
+              <text x="40" y="330">① FRAME · MS / ALUMINIUM</text>
+              <text x="40" y="350">② LED LIGHTING</text>
+              <text x="40" y="370">③ FACE · ACRYLIC / ACP / SS BACKLIT</text>
+            </g>
+          </svg>
+        </figure>
+
+        <div class="product__body">
+          <div class="spec-block reveal">
+            <h3 class="spec-block__title">Signboard types</h3>
+            <div class="option-cards">
+              <div class="option-card"><p class="option-card__tag">Lit</p><h4>LED signboards</h4><p>Bright, even LED illumination — visible from across the road at night.</p></div>
+              <div class="option-card"><p class="option-card__tag">Lit · premium</p><h4>SS backlit signboards</h4><p>Stainless-steel letters with a soft halo of light behind — a premium look for showrooms and offices.</p></div>
+              <div class="option-card"><p class="option-card__tag">Material</p><h4>Acrylic sheet</h4><p>Glossy, colourful faces and cut letters; can be lit from inside.</p></div>
+              <div class="option-card"><p class="option-card__tag">Material</p><h4>ACP sheet</h4><p>Aluminium composite panels — durable, weather-resistant boards and fascia.</p></div>
+            </div>
+          </div>
+          <div class="spec-block reveal">
+            <h3 class="spec-block__title">Framing</h3>
+            <ul class="tile-list tile-list--2">
+              <li class="tile"><span class="tile__k">MS framing</span><span class="tile__v">Mild-steel structure for large and heavy boards</span></li>
+              <li class="tile"><span class="tile__k">Aluminium framing</span><span class="tile__v">Lightweight, rust-free frame</span></li>
+            </ul>
+          </div>
+          <div class="photo-row" data-photos="signboards" hidden>
+            <img data-src="assets/img/signboard-1.jpg" alt="LED signboard by 590 Craft Studio (replace with real description)" width="800" height="600" loading="lazy" decoding="async">
+            <img data-src="assets/img/signboard-2.jpg" alt="SS backlit signboard by 590 Craft Studio (replace with real description)" width="800" height="600" loading="lazy" decoding="async">
+            <img data-src="assets/img/signboard-3.jpg" alt="ACP signboard by 590 Craft Studio (replace with real description)" width="800" height="600" loading="lazy" decoding="async">
+          </div>
+          <a class="btn btn--wa reveal" href="https://wa.me/919000000000" data-wa data-wa-text="Hi 590 Craft Studio, I need a quote for a signboard (LED / acrylic / ACP / SS backlit)." target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Quote for a signboard
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · NAME PLATES -->
+    <section class="product" id="nameplates" aria-labelledby="np-title">
+      <div class="container product__grid">
+        <header class="product__head reveal">
+          <p class="eyebrow"><span class="step__num">03</span> Name plates</p>
+          <h2 class="section-title" id="np-title">Name plates for homes &amp; <em>whole societies</em></h2>
+          <p class="lead">One elegant plate for your front door, or a matching set for every gate, wing and tower of your society.</p>
+        </header>
+
+        <figure class="product__art reveal" aria-hidden="true">
+          <svg viewBox="0 0 520 360" class="art">
+            <defs>
+              <linearGradient id="a-ss2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef0f2"/><stop offset=".45" stop-color="#a3aab0"/><stop offset="1" stop-color="#dfe2e5"/></linearGradient>
+              <filter id="a-glow2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="8"/></filter>
+            </defs>
+            <!-- home plate -->
+            <g transform="translate(30 70)">
+              <rect x="-6" y="-6" width="192" height="122" rx="10" fill="#ffb347" opacity=".35" filter="url(#a-glow2)"/>
+              <rect width="180" height="110" rx="8" fill="url(#a-ss2)"/>
+              <text x="90" y="52" text-anchor="middle" class="art-plate">The Family</text>
+              <text x="90" y="78" text-anchor="middle" class="art-sub" fill="#2a2c30">HOUSE NO. 00</text>
+              <text x="90" y="150" text-anchor="middle" class="art-label">HOME</text>
+            </g>
+            <!-- society board -->
+            <g transform="translate(250 30)">
+              <rect width="240" height="70" rx="6" fill="#1b1d21" stroke="url(#a-ss2)" stroke-width="3"/>
+              <text x="120" y="44" text-anchor="middle" class="art-plate" fill="#f1e2c4">Your Society</text>
+              <rect x="10" y="80" width="64" height="160" fill="#3b3a37"/>
+              <rect x="166" y="80" width="64" height="160" fill="#3b3a37"/>
+              <rect x="18" y="100" width="48" height="36" rx="3" fill="url(#a-ss2)"/><text x="42" y="123" text-anchor="middle" class="art-sub" fill="#2a2c30">WING A</text>
+              <rect x="174" y="100" width="48" height="36" rx="3" fill="url(#a-ss2)"/><text x="198" y="123" text-anchor="middle" class="art-sub" fill="#2a2c30">WING B</text>
+              <text x="120" y="290" text-anchor="middle" class="art-label">SOCIETY</text>
+            </g>
+          </svg>
+        </figure>
+
+        <div class="product__body">
+          <div class="spec-block reveal">
+            <h3 class="spec-block__title">Options</h3>
+            <div class="option-cards">
+              <div class="option-card"><p class="option-card__tag">For</p><h4>Homes</h4><p>Door and gate name plates for bungalows, row houses and flats.</p></div>
+              <div class="option-card"><p class="option-card__tag">For</p><h4>Full societies</h4><p>Main-gate society name, wing and tower boards in one consistent design for the whole complex.</p></div>
+            </div>
+          </div>
+          <div class="photo-row" data-photos="nameplates" hidden>
+            <img data-src="assets/img/nameplate-1.jpg" alt="Home name plate by 590 Craft Studio (replace with real description)" width="800" height="600" loading="lazy" decoding="async">
+            <img data-src="assets/img/nameplate-2.jpg" alt="Society name board by 590 Craft Studio (replace with real description)" width="800" height="600" loading="lazy" decoding="async">
+          </div>
+          <a class="btn btn--wa reveal" href="https://wa.me/919000000000" data-wa data-wa-text="Hi 590 Craft Studio, I need a quote for a name plate (home / society)." target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Quote for a name plate
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · GLASS RAILINGS -->
+    <section class="product product--alt" id="railings" aria-labelledby="rail-title">
+      <div class="container product__grid">
+        <header class="product__head reveal">
+          <p class="eyebrow"><span class="step__num">04</span> Glass railings</p>
+          <h2 class="section-title" id="rail-title">Glass railings for <em>houses</em></h2>
+          <p class="lead">Keep the view, lose the bars. Clear toughened-glass railings for balconies, terraces and staircases.</p>
+        </header>
+
+        <figure class="product__art reveal" aria-hidden="true">
+          <svg viewBox="0 0 520 360" class="art">
+            <defs>
+              <linearGradient id="a-gl3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b8dbea" stop-opacity=".45"/><stop offset="1" stop-color="#5a7f92" stop-opacity=".25"/></linearGradient>
+              <linearGradient id="a-sky3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b3444"/><stop offset="1" stop-color="#6b4a32"/></linearGradient>
+            </defs>
+            <rect x="20" y="20" width="480" height="230" rx="6" fill="url(#a-sky3)"/>
+            <circle cx="400" cy="200" r="34" fill="#ffb25e" opacity=".8"/>
+            <rect x="20" y="250" width="480" height="20" fill="#cfc8bd"/>
+            <rect x="20" y="270" width="480" height="8" fill="#2d3035"/>
+            <g>
+              <rect x="40" y="150" width="104" height="100" fill="url(#a-gl3)" stroke="#dfe6ea" stroke-opacity=".6"/>
+              <rect x="150" y="150" width="104" height="100" fill="url(#a-gl3)" stroke="#dfe6ea" stroke-opacity=".6"/>
+              <rect x="260" y="150" width="104" height="100" fill="url(#a-gl3)" stroke="#dfe6ea" stroke-opacity=".6"/>
+              <rect x="370" y="150" width="104" height="100" fill="url(#a-gl3)" stroke="#dfe6ea" stroke-opacity=".6"/>
+              <rect x="34" y="142" width="446" height="8" rx="4" fill="#c9ced4"/>
+              <path d="M60 170 90 160M170 170 200 160M280 170 310 160M390 170 420 160" stroke="#fff" stroke-opacity=".4" stroke-width="3" stroke-linecap="round"/>
+            </g>
+            <text x="20" y="320" class="art-label">TOUGHENED GLASS RAILING</text>
+            <text x="20" y="340" class="art-sub">balconies · terraces · staircases</text>
+          </svg>
+        </figure>
+
+        <div class="product__body">
+          <div class="spec-block reveal">
+            <h3 class="spec-block__title">Options</h3>
+            <ul class="tile-list">
+              <li class="tile"><span class="tile__k">Glass</span><span class="tile__v">Toughened safety glass (12mm commonly used)</span></li>
+              <li class="tile"><span class="tile__k">Balconies</span><span class="tile__v">Open, unobstructed views</span></li>
+              <li class="tile"><span class="tile__k">Terraces</span><span class="tile__v">Safe edges for rooftop living</span></li>
+              <li class="tile"><span class="tile__k">Staircases</span><span class="tile__v">Light-filled, modern stairs</span></li>
+            </ul>
+          </div>
+          <div class="photo-row" data-photos="railings" hidden>
+            <img data-src="assets/img/railing-1.jpg" alt="Glass balcony railing by 590 Craft Studio (replace with real description)" width="800" height="600" loading="lazy" decoding="async">
+            <img data-src="assets/img/railing-2.jpg" alt="Glass staircase railing by 590 Craft Studio (replace with real description)" width="800" height="600" loading="lazy" decoding="async">
+          </div>
+          <a class="btn btn--wa reveal" href="https://wa.me/919000000000" data-wa data-wa-text="Hi 590 Craft Studio, I need a quote for glass railings." target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Quote for glass railings
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HOW WE WORK + SERVICE AREA ===================== -->
+    <section class="band" id="service-area" aria-labelledby="area-title">
+      <div class="container">
+        <div class="band__grid">
+          <div class="reveal">
+            <p class="eyebrow">Service area</p>
+            <h2 class="section-title" id="area-title">Working across <em>Surat</em> &amp; <em>Rajkot</em></h2>
+            <p class="lead">Site visit, measurement, fabrication and installation — handled by one team, so the windows, glass, cladding and signage on your building fit together.</p>
+          </div>
+          <ul class="cities reveal">
+            <li class="city"><span class="city__name">Surat</span><span class="city__meta">Site visits &amp; installation</span></li>
+            <li class="city"><span class="city__name">Rajkot</span><span class="city__meta">Site visits &amp; installation</span></li>
+          </ul>
+        </div>
+        <ol class="process reveal">
+          <li><span class="process__n">1</span><h3>Message us</h3><p>Send your requirement or photos on WhatsApp.</p></li>
+          <li><span class="process__n">2</span><h3>Site visit</h3><p>We measure and suggest series, glass and materials.</p></li>
+          <li><span class="process__n">3</span><h3>Quote</h3><p>A clear quotation for your selected options.</p></li>
+          <li><span class="process__n">4</span><h3>Fabricate &amp; install</h3><p>Made to size and fitted on site.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================== CONTACT ============================== -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact__grid">
+        <div class="contact__intro reveal">
+          <p class="eyebrow">Free quote</p>
+          <h2 class="section-title" id="contact-title">Tell us what you need. <em>We'll reply on WhatsApp.</em></h2>
+          <p class="lead">Fill in a few details and the form opens WhatsApp with your message ready to send. Or just tap the button and chat.</p>
+          <a class="btn btn--wa btn--lg" href="https://wa.me/919000000000?text=Hi%20590%20Craft%20Studio%2C%20I%20would%20like%20a%20quote." data-wa target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Chat on WhatsApp now
+          </a>
+          <ul class="contact__direct">
+            <li><span>Call</span><a href="tel:+919000000000" data-phone>+91 90000 00000</a></li>
+            <li><span>Email</span><a href="mailto:hello@aluform.example" data-email>hello@aluform.example</a></li>
+          </ul>
+        </div>
+
+        <!-- Netlify Forms: name="quote", data-netlify, honeypot "bot-field".
+             Without JS the form posts to Netlify and shows /success.html.
+             With JS it opens WhatsApp AND posts a copy to Netlify in the background. -->
+        <form class="quote-form reveal" name="quote" method="POST" action="/success.html" data-netlify="true" netlify-honeypot="bot-field" id="quote-form" novalidate>
+          <input type="hidden" name="form-name" value="quote">
+          <p class="visually-hidden" aria-hidden="true">
+            <label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
+
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="80" placeholder="e.g. Your full name">
+            <p class="field__error" id="f-name-err" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone / WhatsApp number</label>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required maxlength="20" placeholder="10-digit mobile number" aria-describedby="f-phone-err">
+            <p class="field__error" id="f-phone-err" role="alert"></p>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-city">City</label>
+              <select id="f-city" name="city" required>
+                <option value="Surat">Surat</option>
+                <option value="Rajkot">Rajkot</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-product">Interested in</label>
+              <select id="f-product" name="product" required>
+                <optgroup label="Aluminium fabrication">
+                  <option>Aluminium windows</option>
+                  <option>Aluminium doors</option>
+                  <option>Glass partitions</option>
+                  <option>Elevation work</option>
+                </optgroup>
+                <optgroup label="Signboards">
+                  <option>LED signboard</option>
+                  <option>SS backlit signboard</option>
+                  <option>Acrylic sheet signboard</option>
+                  <option>ACP sheet signboard</option>
+                </optgroup>
+                <optgroup label="Name plates">
+                  <option>Name plate – home</option>
+                  <option>Name plate – society</option>
+                </optgroup>
+                <optgroup label="Railings">
+                  <option>Glass railing</option>
+                </optgroup>
+                <option>Something else</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-msg">Message <span class="field__opt">(optional)</span></label>
+            <textarea id="f-msg" name="message" rows="4" maxlength="600" placeholder="Size, quantity, series / glass preference, site location…"></textarea>
+          </div>
+          <button class="btn btn--wa btn--block" type="submit">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Send on WhatsApp
+          </button>
+          <p class="form-note">Opens WhatsApp with your details filled in. Nothing is sent until you press send in WhatsApp.</p>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <p class="brand brand--footer"><img class="brand__logo" src="assets/logo.svg" width="32" height="32" alt=""><span class="brand__name">590 Craft Studio</span></p>
+        <p class="site-footer__tag">Aluminium &amp; Signage · Surat &amp; Rajkot</p>
+      </div>
+      <address class="site-footer__addr">
+        <!-- CUSTOMIZE: real addresses -->
+        <span>Surat: Workshop address, Area, Surat, Gujarat <span class="ph">(placeholder)</span></span>
+        <span>Rajkot: Workshop address, Area, Rajkot, Gujarat <span class="ph">(placeholder)</span></span>
+      </address>
+      <ul class="site-footer__links">
+        <li><a href="tel:+919000000000" data-phone>+91 90000 00000</a></li>
+        <li><a href="https://wa.me/919000000000" data-wa target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="mailto:hello@aluform.example" data-email>hello@aluform.example</a></li>
+      </ul>
+    </div>
+    <div class="container site-footer__base">
+      <p>© <span data-year>2026</span> 590 Craft Studio. All rights reserved.</p>
+      <p><a href="#top">Back to top ↑</a></p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp (mobile) -->
+  <a class="wa-fab" href="https://wa.me/919000000000?text=Hi%20590%20Craft%20Studio%2C%20I%20would%20like%20a%20quote." data-wa target="_blank" rel="noopener" aria-label="Chat with 590 Craft Studio on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
+  </a>
+
+  <!-- Icon sprite -->
+  <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+  </svg>
+</body>
+</html>
