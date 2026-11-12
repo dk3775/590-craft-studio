@@ -1,27 +1,24 @@
 /* ==========================================================================
    590 Craft Studio — BUSINESS DETAILS (edit this file first)
    --------------------------------------------------------------------------
-   Every value below is a PLACEHOLDER. Replace with the real business details.
-   The same placeholder number/email also appears as fallback text inside
-   index.html, success.html and 404.html (for visitors without JavaScript) —
-   do a project-wide find & replace for:
-       919000000000        -> your WhatsApp number (country code + number, no +, no spaces)
-       +91 90000 00000     -> your phone number as you want it displayed
-       +919000000000       -> your phone number for tel: links
-       hello@aluform.example -> your email
+   Phone and WhatsApp are live. Email is still a placeholder.
+   The same values also appear as fallback text inside index.html,
+   success.html and 404.html (for visitors without JavaScript).
    ========================================================================== */
 
 export const BUSINESS = {
-  name: '590 Craft Studio',                          // brand name
-  tagline: 'Aluminium & Signage · Surat & Rajkot',   // PLACEHOLDER tagline
+  name: '590 Craft Studio',
+  tagline: 'Aluminium & Signage · Surat & Rajkot',
 
   // WhatsApp click-to-chat number in international format WITHOUT "+" or spaces.
-  // India example: 91 + 10-digit mobile  ->  "91XXXXXXXXXX"
-  whatsappNumber: '919000000000',                    // PLACEHOLDER (not a real number)
+  whatsappNumber: '917201936675',
 
-  phoneDisplay: '+91 90000 00000',                   // PLACEHOLDER shown on the page
-  phoneHref: '+919000000000',                        // PLACEHOLDER used in tel: links
+  phoneDisplay: '+91 72019 36675',
+  phoneHref: '+917201936675',
   email: 'hello@aluform.example',                    // PLACEHOLDER (.example is a reserved, non-working domain)
+
+  instagramHandle: '590craftstudio',
+  instagramUrl: 'https://www.instagram.com/590craftstudio/',
 
   // Default text when someone taps a generic WhatsApp button.
   defaultWhatsAppMessage: 'Hi 590 Craft Studio, I would like a quote for aluminium / glass / signage work.',

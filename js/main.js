@@ -19,6 +19,7 @@ function applyBusinessDetails() {
   });
   document.querySelectorAll('[data-phone]').forEach((a) => { a.href = `tel:${BUSINESS.phoneHref}`; a.textContent = BUSINESS.phoneDisplay; });
   document.querySelectorAll('[data-email]').forEach((a) => { a.href = `mailto:${BUSINESS.email}`; a.textContent = BUSINESS.email; });
+  document.querySelectorAll('[data-instagram]').forEach((a) => { a.href = BUSINESS.instagramUrl; });
   document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 }
 

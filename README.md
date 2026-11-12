@@ -85,13 +85,14 @@ The first `deploy` asks you to create or link a site. Choose `.` as the publish 
 - Netlify Forms does not work on Vercel. The WhatsApp flow still works fully, and the background POST fails silently.
 - To capture submissions on Vercel, change the form handler to a service such as Formspree (see "Form destination" below).
 
-## Customize these (all placeholders)
+## Customize these
 
 | What | Where | Current placeholder |
 |---|---|---|
-| **WhatsApp number** | `js/config.js` → `whatsappNumber` (format `91XXXXXXXXXX`, no `+`/spaces). Also find & replace `919000000000` in `index.html`, `success.html`, `404.html` (no-JS fallback links). | `919000000000` |
-| **Phone** | `js/config.js` → `phoneDisplay`, `phoneHref`. Also find & replace `+91 90000 00000` / `+919000000000` in `index.html` and `+91-90000-00000` in the JSON-LD. | `+91 90000 00000` |
-| **Email** | `js/config.js` → `email`. Also find & replace `hello@aluform.example` in `index.html`. | `hello@aluform.example` |
+| **WhatsApp number** | `js/config.js` → `whatsappNumber` (format `91XXXXXXXXXX`, no `+`/spaces). Also find & replace `917201936675` in `index.html`, `success.html`, `404.html` (no-JS fallback links). | `917201936675` |
+| **Phone** | `js/config.js` → `phoneDisplay`, `phoneHref`. Also find & replace `+91 72019 36675` / `+917201936675` in `index.html` and `+91-72019-36675` in the JSON-LD. | `+91 72019 36675` |
+| **Email** | `js/config.js` → `email`. Also find & replace `hello@aluform.example` in `index.html`. | `hello@aluform.example` (still a placeholder) |
+| **Instagram** | `js/config.js` → `instagramHandle`, `instagramUrl`. Links are in the contact section and footer. | [@590craftstudio](https://www.instagram.com/590craftstudio/) |
 | **Default WhatsApp message** | `js/config.js` → `defaultWhatsAppMessage`. Per-button messages are in the `data-wa-text="…"` attributes in `index.html`. | "Hi 590 Craft Studio, …" |
 | **Business name / tagline** | `js/config.js` → `name`, `tagline`; `index.html` `<title>`, meta/OG tags, JSON-LD, header `.brand__name`, footer | 590 Craft Studio · Aluminium & Signage · Surat & Rajkot |
 | **Logo / favicon** | Replace `assets/logo.svg` and `assets/favicon.svg` (keep the file names) | placeholder art |
