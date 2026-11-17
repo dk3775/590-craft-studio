@@ -12,7 +12,7 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js';
 
 const SIGN_TEXT = '590 CRAFT STUDIO';      // shop signboard on the east facade
-const SOCIETY_TEXT = 'Sample Residency';   // society name board over the gate (illustrative)
+const SOCIETY_TEXT = 'LETTER SIGNS';      // letter-sign board over the gate (illustrative)
 
 /* ---------- building dimensions (world units ≈ metres) ---------- */
 const HX = 5.8, HZ = 4.3;     // half width / half depth of the core
@@ -163,13 +163,13 @@ export async function createBuildingScene(container, { hotspotEls = {} } = {}) {
     solid(boxGeo(0.9, 3.6, 0.9), M.stone, 10.5, 1.8, z);
     solid(boxGeo(1.1, 0.16, 1.1), M.acpDark, 10.5, 3.68, z);
   }
-  // society name board spanning the gate (NAME PLATE hotspot)
+  // letter-sign board spanning the gate (letter signs hotspot)
   solid(boxGeo(0.3, 0.95, 5.9), M.acpDark, 11.1, 3.1, 3.2);
   const boardTex = track(makeSocietyTexture(SOCIETY_TEXT));
   const board = new THREE.Mesh(track(new THREE.PlaneGeometry(5.5, 0.82)), track(new THREE.MeshBasicMaterial({ map: boardTex, toneMapped: false })));
   board.position.set(11.26, 3.1, 3.2); board.rotation.y = Math.PI / 2;
   group.add(board);
-  // small home-style name plate on the pillar
+  // small letter plate on the pillar
   const plateTex = track(makePlateTexture());
   const plate = new THREE.Mesh(track(new THREE.PlaneGeometry(0.62, 0.4)), track(new THREE.MeshStandardMaterial({ map: plateTex, metalness: 0.7, roughness: 0.3 })));
   plate.position.set(10.96, 1.7, 5.75); plate.rotation.y = Math.PI / 2;

@@ -139,15 +139,18 @@ button, input, select, textarea { font: inherit; color: inherit; }
   padding-inline: var(--gutter);
 }
 .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; margin: 0; }
-.brand__mark, .brand__logo { width: 36px; height: 36px; color: var(--alu); flex-shrink: 0; border-radius: 8px; }
+.brand__mark, .brand__logo {
+  width: auto; height: 46px; color: var(--alu); flex-shrink: 0;
+  border-radius: 7px; object-fit: contain; background: #EEE8E0;
+}
 .brand__text { display: flex; flex-direction: column; line-height: 1.05; }
 .brand__name { font-family: var(--font-display); font-weight: 600; letter-spacing: .01em; font-size: 1.12rem; }
 .brand__tag { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
 .site-nav { margin-left: auto; }
-.site-nav ul { display: flex; gap: 4px; }
+.site-nav ul { display: flex; gap: 2px; }
 .site-nav a {
-  display: block; padding: 8px 14px; border-radius: 999px;
-  font-size: .9rem; font-weight: 600; color: var(--muted); text-decoration: none;
+  display: block; padding: 8px 11px; border-radius: 999px;
+  font-size: .86rem; font-weight: 600; color: var(--muted); text-decoration: none;
   transition: color .2s, background-color .2s;
 }
 .site-nav a:hover, .site-nav a[aria-current="true"] { color: var(--text); background: rgba(255,255,255,.06); }
@@ -430,6 +433,40 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .art { padding: 10px; border-radius: 14px; }
 }
 
+
+@media (max-width: 1100px) and (min-width: 900px) {
+  .brand__tag { display: none; }
+  .brand__logo { height: 42px; }
+  .site-nav a { padding: 8px 9px; font-size: .82rem; }
+}
+
+/* ==========================================================================
+   STUDIO / BRAND
+   ========================================================================== */
+.studio {
+  padding: clamp(72px, 9vw, 120px) 0;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+.studio__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+}
+.studio__audience { color: var(--muted); margin-top: 1rem; max-width: 52ch; }
+.studio__visuals { display: grid; gap: 14px; margin: 0; }
+.studio__visuals figure { margin: 0; }
+.studio__visuals img {
+  width: 100%; height: auto;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: #EEE8E0;
+}
+@media (max-width: 899px) {
+  .studio__grid { grid-template-columns: 1fr; }
+}
+
 /* ==========================================================================
    SERVICE AREA BAND
    ========================================================================== */
@@ -447,7 +484,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   padding: 26px 28px; border-radius: 16px; border: 1px solid var(--line-2);
   background: linear-gradient(120deg, rgba(255,255,255,.05), rgba(255,255,255,.01));
 }
-.city__name { font-family: var(--font-display); font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1; }
+.city__name { font-family: var(--font-display); font-size: clamp(1.55rem, 2.6vw, 2.35rem); line-height: 1.1; }
 .city__meta { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); text-align: right; }
 .process { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: clamp(48px, 7vw, 90px); counter-reset: p; }
 .process li { padding: 22px; border-top: 1px solid var(--gold); background: rgba(0,0,0,.18); border-radius: 0 0 12px 12px; }
@@ -510,10 +547,11 @@ button, input, select, textarea { font: inherit; color: inherit; }
    ========================================================================== */
 .site-footer { border-top: 1px solid var(--line); background: #0b0c0e; padding: 56px 0 28px; color: var(--muted); font-size: .92rem; }
 .site-footer__grid { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 32px; }
-.brand--footer { align-items: center; }
-.brand--footer .brand__logo { width: 32px; height: 32px; }
+.brand--footer { align-items: flex-start; flex-direction: column; gap: 14px; }
+.brand--footer .brand__logo { width: min(220px, 100%); height: auto; border-radius: 12px; }
 .brand--footer .brand__name { color: var(--text); }
-.site-footer__tag { margin-top: 6px; }
+.site-footer__tag { margin-top: 10px; }
+.site-footer__note { margin-top: 8px; color: var(--muted); font-size: .9rem; max-width: 36ch; }
 .site-footer__addr { font-style: normal; display: grid; gap: 6px; }
 .site-footer__links { display: grid; gap: 6px; justify-items: start; }
 .site-footer a { text-decoration: none; }

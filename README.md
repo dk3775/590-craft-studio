@@ -1,10 +1,10 @@
-# 590 Craft Studio — landing page (Surat & Rajkot)
+# 590 Craft Studio — landing page (Gota, Ahmedabad)
 
-This is a one-page static landing site for an aluminium fabrication and signage business. It is built for ad traffic, and the main call to action is WhatsApp click-to-chat.
+This is a one-page static landing site for 590 Craft Studio, a fabrication and signage studio in Gota, Ahmedabad. It is built for ad traffic, and the main call to action is a call or WhatsApp click-to-chat. The name 590 stands for aim and manifestation.
 
-- **Desktop:** a 3D apartment building drawn with Three.js and driven by scroll. As you scroll, the camera circles the building and stops at hotspots for each product (windows, doors, glass partitions, ACP elevation, signboard, society name board, glass railings). For each hotspot, an HTML card fades in with that product's options.
+- **Desktop:** a 3D apartment building drawn with Three.js and driven by scroll. As you scroll, the camera circles the building and stops at hotspots for each product (windows, doors, slim and glass partitions, ACP cladding, signboard, letter-fitting signs, aluminium-glass railings). For each hotspot, an HTML card fades in with that product's options.
 - **Mobile, reduced motion, or no WebGL:** an inline SVG building that pans and zooms to the same hotspots as you scroll, with the same cards. Three.js is never downloaded on these devices.
-- **Below the 3D section:** product detail sections (fabrication, signboards, name plates, railings), the Surat & Rajkot service area, how the work is done, a quote form that opens WhatsApp and is also captured by Netlify Forms, and a footer.
+- **Below the 3D section:** a short studio/brand section (logo and the meaning of 590), product detail sections (aluminium fabrication and ACP cladding, signage boards, letter-fitting signs and letter manufacturing, stretch ceilings, aluminium-glass railings), the Gota / Ahmedabad service area, how the work is done, a quote form that opens WhatsApp and is also captured by Netlify Forms, and a footer.
 
 Plain HTML/CSS/JS. There is no build step and no framework. Only GSAP 3.12.5 (core + ScrollTrigger) and Three.js r160 load from the jsDelivr CDN, at pinned versions. Fonts come from Google Fonts.
 
@@ -23,10 +23,14 @@ alufab-landing/
 │   ├── building-scene.js # procedural Three.js building, camera views, hotspots
 │   └── mobile-scene.js   # SVG building journey for mobile / fallback
 ├── assets/
-│   ├── logo.svg          # placeholder logo (header + footer)
-│   ├── favicon.svg       # placeholder favicon
-│   ├── og-image.png      # 1200×630 link-preview image (screenshot of the 3D hero)
-│   └── img/              # put real project photos here (see "Photos")
+│   ├── logo.jpg          # official logo (footer + studio section)
+│   ├── logo-mark.jpg     # 590 + tape crop (header)
+│   ├── favicon.png       # 32×32 favicon from the metallic 5
+│   ├── favicon.svg       # simple 590 monogram fallback
+│   ├── apple-touch-icon.png
+│   ├── og-image.png      # 1200×630 link-preview image (logo on the dark theme)
+│   └── img/
+│       └── brand-mark.jpg  # alternate brand graphic (not a project photo)
 ├── netlify.toml          # Netlify: publish root, security + cache headers
 ├── vercel.json           # Vercel: same headers (if you host on Vercel instead)
 ├── robots.txt
@@ -91,32 +95,35 @@ The first `deploy` asks you to create or link a site. Choose `.` as the publish 
 |---|---|---|
 | **WhatsApp number** | `js/config.js` → `whatsappNumber` (format `91XXXXXXXXXX`, no `+`/spaces). Also find & replace `917201936675` in `index.html`, `success.html`, `404.html` (no-JS fallback links). | `917201936675` |
 | **Phone** | `js/config.js` → `phoneDisplay`, `phoneHref`. Also find & replace `+91 72019 36675` / `+917201936675` in `index.html` and `+91-72019-36675` in the JSON-LD. | `+91 72019 36675` |
-| **Email** | `js/config.js` → `email`. Also find & replace `hello@aluform.example` in `index.html`. | `hello@aluform.example` (still a placeholder) |
+| **Email** | `js/config.js` → `email`. Also find & replace `590craftstudio@gmail.com` in `index.html` (JSON-LD and no-JS fallback links). | `590craftstudio@gmail.com` |
 | **Instagram** | `js/config.js` → `instagramHandle`, `instagramUrl`. Links are in the contact section and footer. | [@590craftstudio](https://www.instagram.com/590craftstudio/) |
 | **Default WhatsApp message** | `js/config.js` → `defaultWhatsAppMessage`. Per-button messages are in the `data-wa-text="…"` attributes in `index.html`. | "Hi 590 Craft Studio, …" |
-| **Business name / tagline** | `js/config.js` → `name`, `tagline`; `index.html` `<title>`, meta/OG tags, JSON-LD, header `.brand__name`, footer | 590 Craft Studio · Aluminium & Signage · Surat & Rajkot |
-| **Logo / favicon** | Replace `assets/logo.svg` and `assets/favicon.svg` (keep the file names) | placeholder art |
-| **Addresses** | `index.html` footer `<address class="site-footer__addr">` | "Workshop address, Area, Surat/Rajkot (placeholder)" |
+| **Business name / tagline** | `js/config.js` → `name`, `tagline`; `index.html` `<title>`, meta/OG tags, JSON-LD, header `.brand__name`, footer | 590 Craft Studio · Fabrication & Signage · Gota, Ahmedabad |
+| **Logo / favicon** | `assets/logo.jpg` (full logo), `assets/logo-mark.jpg` (header crop), `assets/favicon.png`, `assets/apple-touch-icon.png` | official logo from the requirements form |
+| **Address** | `index.html` footer `<address class="site-footer__addr">` and the service-area section | Gota, Ahmedabad, Gujarat (no street address on file) |
 | **All page text** | `index.html`. Journey cards are the `<article class="step">` blocks. Details are the `<section class="product">` blocks. | — |
-| **Text on the 3D building** | `js/building-scene.js` top: `SIGN_TEXT` (shop sign), `SOCIETY_TEXT` (gate board). The small pillar plate text ("A-Wing / FLATS 101–704") is in `makePlateTexture()`. | `590 CRAFT STUDIO`, `Sample Residency` |
+| **Text on the 3D building** | `js/building-scene.js` top: `SIGN_TEXT` (shop sign), `SOCIETY_TEXT` (gate board). The small pillar plate text ("A-Wing / FLATS 101–704") is in `makePlateTexture()`. | `590 CRAFT STUDIO`, `LETTER SIGNS` |
 | **Text on the mobile SVG building** | `index.html`, the two `<text class="lite-signtext">` elements | `590 CRAFT STUDIO` |
 | **Link preview image** | `assets/og-image.png` (1200×630). Set `og:url` to your live URL. | screenshot |
 | **Colours** | `css/styles.css` `:root`: `--gold` / `--gold-2` (accent), `--bg`, `--wa` | dark charcoal + warm gold |
 | **Fonts** | Google Fonts `<link>` in `index.html` + `--font-*` in `:root` | Fraunces / Manrope / IBM Plex Mono |
 | **Form destination** | Netlify Forms by default (`name="quote"`). For another service (e.g. Formspree), set the form `action` to its URL and change the `fetch('/', …)` call in `initForm()` in `js/main.js`. | Netlify Forms |
-| **Product wording** | Series, glass and material descriptions in `index.html` are general. **Confirm them with the owner** (e.g. which name-plate materials, railing fittings, glass thicknesses are offered). | — |
+| **Product wording** | Series, glass and material descriptions in `index.html` are general. **Confirm them with the owner** (e.g. which letter, railing and glass options are offered). | — |
 
 ### Photos
-No real client photos are included. The product sections use original SVG illustrations instead. To add real project photos:
-1. Put JPGs (about 1600px wide, 4:3, under 300 KB each) at these exact paths:
+The official logo and an alternate brand mark (from the requirements form) are used in the header, footer, favicon, Open Graph image, and the studio section. They are brand graphics, not photographs of completed jobs, so product sections still use original SVG illustrations.
+
+To add real project photos later:
+1. Put JPGs (about 1600px wide, 4:3, under 300 KB each) at paths such as:
    - `assets/img/fabrication-1.jpg`, `fabrication-2.jpg`, `fabrication-3.jpg`
    - `assets/img/signboard-1.jpg`, `signboard-2.jpg`, `signboard-3.jpg`
-   - `assets/img/nameplate-1.jpg`, `nameplate-2.jpg`
+   - `assets/img/letters-1.jpg`, `letters-2.jpg`
+   - `assets/img/ceiling-1.jpg`
    - `assets/img/railing-1.jpg`, `railing-2.jpg`
-2. Set `useProjectPhotos: true` in `js/config.js`.
-3. Edit each `<img alt="…">` in the `.photo-row` blocks in `index.html` to describe the real photo.
+2. Add or restore a `<div class="photo-row">` with `<img data-src="…">` tags in the matching product section in `index.html`, and write honest alt text (do not invent client names).
+3. Set `useProjectPhotos: true` in `js/config.js`.
 
-The images lazy-load, and any missing file is simply skipped. To add or remove photos, add or remove `<img data-src="…">` tags inside the `.photo-row` for that section.
+The images lazy-load, and any missing file is simply skipped.
 
 ## How the 3D scroll and fallback work
 
@@ -133,7 +140,8 @@ The images lazy-load, and any missing file is simply skipped. To add or remove p
 - **If a CDN fails:** if Three.js can't load, the page switches to lite mode. If GSAP can't load, all content is still shown in a static layout.
 
 ## Known limitations
-- All contact details, addresses, logo and photos are placeholders (see the table above).
-- The 3D building is a stylized illustration, not the client's real project.
+- The location is given as Gota, Ahmedabad, Gujarat. No street address was provided, so none is shown.
+- No photographs of completed projects were included with the requirements form, so product sections still use illustrations. The two Drive images are the official logo and an alternate brand mark.
+- The 3D building is a stylized illustration, not a real project.
 - Netlify Forms only works on Netlify. On Vercel, use a form service if you need submissions stored.
 - The `Content-Security-Policy` in `netlify.toml` / `vercel.json` allows only `self`, jsDelivr and Google Fonts. If you add analytics (e.g. a Meta Pixel or Google Ads tag for your campaigns), add their domains to `script-src`, `img-src` and `connect-src`.

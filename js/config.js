@@ -1,31 +1,31 @@
 /* ==========================================================================
    590 Craft Studio — BUSINESS DETAILS (edit this file first)
    --------------------------------------------------------------------------
-   Phone and WhatsApp are live. Email is still a placeholder.
+   Phone, WhatsApp, Instagram and email are live.
    The same values also appear as fallback text inside index.html,
    success.html and 404.html (for visitors without JavaScript).
    ========================================================================== */
 
 export const BUSINESS = {
   name: '590 Craft Studio',
-  tagline: 'Aluminium & Signage · Surat & Rajkot',
+  tagline: 'Fabrication & Signage · Gota, Ahmedabad',
 
   // WhatsApp click-to-chat number in international format WITHOUT "+" or spaces.
   whatsappNumber: '917201936675',
 
   phoneDisplay: '+91 72019 36675',
   phoneHref: '+917201936675',
-  email: 'hello@aluform.example',                    // PLACEHOLDER (.example is a reserved, non-working domain)
+  email: '590craftstudio@gmail.com',
 
   instagramHandle: '590craftstudio',
   instagramUrl: 'https://www.instagram.com/590craftstudio/',
 
   // Default text when someone taps a generic WhatsApp button.
-  defaultWhatsAppMessage: 'Hi 590 Craft Studio, I would like a quote for aluminium / glass / signage work.',
+  defaultWhatsAppMessage: 'Hi 590 Craft Studio, I would like a quote for fabrication / signage work in Ahmedabad.',
 
-  // Set to true once you have added real project photos to /assets/img/
-  // (see README → "Photos"). While false, the original SVG illustrations are shown
-  // and no image requests are made.
+  // Set to true once real project photos (completed work, not brand marks)
+  // have been added to /assets/img/ — see README → "Photos".
+  // Brand graphics live in the studio section and do not use this flag.
   useProjectPhotos: false,
 };
 
