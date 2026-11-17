@@ -26,7 +26,7 @@ export const BUSINESS = {
   // Set to true once real project photos (completed work, not brand marks)
   // have been added to /assets/img/ — see README → "Photos".
   // Brand graphics live in the studio section and do not use this flag.
-  useProjectPhotos: false,
+  useProjectPhotos: true,
 };
 
 /** Build a wa.me click-to-chat URL with a prefilled, URL-encoded message. */

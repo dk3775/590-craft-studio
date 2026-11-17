@@ -4,7 +4,7 @@ This is a one-page static landing site for 590 Craft Studio, a fabrication and s
 
 - **Desktop:** a 3D apartment building drawn with Three.js and driven by scroll. As you scroll, the camera circles the building and stops at hotspots for each product (windows, doors, slim and glass partitions, ACP cladding, signboard, letter-fitting signs, aluminium-glass railings). For each hotspot, an HTML card fades in with that product's options.
 - **Mobile, reduced motion, or no WebGL:** an inline SVG building that pans and zooms to the same hotspots as you scroll, with the same cards. Three.js is never downloaded on these devices.
-- **Below the 3D section:** a short studio/brand section (logo and the meaning of 590), product detail sections (aluminium fabrication and ACP cladding, signage boards, letter-fitting signs and letter manufacturing, stretch ceilings, aluminium-glass railings), the Gota / Ahmedabad service area, how the work is done, a quote form that opens WhatsApp and is also captured by Netlify Forms, and a footer.
+- **Below the 3D section:** a short studio/brand section (logo and the meaning of 590), product detail sections (aluminium fabrication and ACP cladding, signage boards, letter-fitting signs and letter manufacturing, stretch ceilings, aluminium-glass railings), an Our Work gallery of real project photos, the Gota / Ahmedabad service area, how the work is done, a quote form that opens WhatsApp and is also captured by Netlify Forms, and a footer.
 
 Plain HTML/CSS/JS. There is no build step and no framework. Only GSAP 3.12.5 (core + ScrollTrigger) and Three.js r160 load from the jsDelivr CDN, at pinned versions. Fonts come from Google Fonts.
 
@@ -18,8 +18,9 @@ alufab-landing/
 ├── css/styles.css        # all styles; colours/fonts in :root at the top
 ├── js/
 │   ├── config.js         # ★ business details: name, WhatsApp, phone, email, photos flag
+│   ├── photos.js         # catalogue of optimised project photos for the gallery
 │   ├── mode.js           # picks "3d" or "lite" layout before first paint
-│   ├── main.js           # GSAP/ScrollTrigger setup, matchMedia, form → WhatsApp
+│   ├── main.js           # GSAP/ScrollTrigger setup, matchMedia, form → WhatsApp, gallery
 │   ├── building-scene.js # procedural Three.js building, camera views, hotspots
 │   └── mobile-scene.js   # SVG building journey for mobile / fallback
 ├── assets/
@@ -28,9 +29,10 @@ alufab-landing/
 │   ├── favicon.png       # 32×32 favicon from the metallic 5
 │   ├── favicon.svg       # simple 590 monogram fallback
 │   ├── apple-touch-icon.png
-│   ├── og-image.png      # 1200×630 link-preview image (logo on the dark theme)
+│   ├── og-image.jpg      # 1200×630 link-preview image (ACP cladding photo)
 │   └── img/
-│       └── brand-mark.jpg  # alternate brand graphic (not a project photo)
+│       ├── brand-mark.jpg  # alternate brand graphic (not a project photo)
+│       └── work/           # optimised WebP project photos (full + thumbs)
 ├── netlify.toml          # Netlify: publish root, security + cache headers
 ├── vercel.json           # Vercel: same headers (if you host on Vercel instead)
 ├── robots.txt
@@ -104,26 +106,21 @@ The first `deploy` asks you to create or link a site. Choose `.` as the publish 
 | **All page text** | `index.html`. Journey cards are the `<article class="step">` blocks. Details are the `<section class="product">` blocks. | — |
 | **Text on the 3D building** | `js/building-scene.js` top: `SIGN_TEXT` (shop sign), `SOCIETY_TEXT` (gate board). The small pillar plate text ("A-Wing / FLATS 101–704") is in `makePlateTexture()`. | `590 CRAFT STUDIO`, `LETTER SIGNS` |
 | **Text on the mobile SVG building** | `index.html`, the two `<text class="lite-signtext">` elements | `590 CRAFT STUDIO` |
-| **Link preview image** | `assets/og-image.png` (1200×630). Set `og:url` to your live URL. | screenshot |
+| **Link preview image** | `assets/og-image.jpg` (1200×630, a project photo of ACP cladding). Set `og:url` to your live URL. | — |
 | **Colours** | `css/styles.css` `:root`: `--gold` / `--gold-2` (accent), `--bg`, `--wa` | dark charcoal + warm gold |
 | **Fonts** | Google Fonts `<link>` in `index.html` + `--font-*` in `:root` | Fraunces / Manrope / IBM Plex Mono |
 | **Form destination** | Netlify Forms by default (`name="quote"`). For another service (e.g. Formspree), set the form `action` to its URL and change the `fetch('/', …)` call in `initForm()` in `js/main.js`. | Netlify Forms |
 | **Product wording** | Series, glass and material descriptions in `index.html` are general. **Confirm them with the owner** (e.g. which letter, railing and glass options are offered). | — |
 
 ### Photos
-The official logo and an alternate brand mark (from the requirements form) are used in the header, footer, favicon, Open Graph image, and the studio section. They are brand graphics, not photographs of completed jobs, so product sections still use original SVG illustrations.
+The official logo and an alternate brand mark are used in the header, footer, favicon and the studio section. Real project photos live in `assets/img/work/` as stripped, compressed WebP (full images up to 1600px, thumbs up to 800px). They are listed in `js/photos.js` and shown:
 
-To add real project photos later:
-1. Put JPGs (about 1600px wide, 4:3, under 300 KB each) at paths such as:
-   - `assets/img/fabrication-1.jpg`, `fabrication-2.jpg`, `fabrication-3.jpg`
-   - `assets/img/signboard-1.jpg`, `signboard-2.jpg`, `signboard-3.jpg`
-   - `assets/img/letters-1.jpg`, `letters-2.jpg`
-   - `assets/img/ceiling-1.jpg`
-   - `assets/img/railing-1.jpg`, `railing-2.jpg`
-2. Add or restore a `<div class="photo-row">` with `<img data-src="…">` tags in the matching product section in `index.html`, and write honest alt text (do not invent client names).
-3. Set `useProjectPhotos: true` in `js/config.js`.
+- in a short row inside the fabrication, signage and letter-sign sections
+- in the filterable **Our Work** gallery (with a lightbox)
 
-The images lazy-load, and any missing file is simply skipped.
+Captions are generic category labels only (for example "ACP cladding", "Name plate"). Set `useProjectPhotos: false` in `js/config.js` to hide the rows and gallery. All gallery images below the fold use `loading="lazy"`.
+
+The archive had no stretch-ceiling or railing photos, so those two product sections still use the original SVG illustrations. To add more work later, drop optimised WebP files into `assets/img/work/`, add an entry to `WORK_PHOTOS` in `js/photos.js` (id, category, caption, alt, src, thumb, width, height, tw, th), and keep captions generic — do not invent client names or locations.
 
 ## How the 3D scroll and fallback work
 
@@ -141,7 +138,7 @@ The images lazy-load, and any missing file is simply skipped.
 
 ## Known limitations
 - The location is given as Gota, Ahmedabad, Gujarat. No street address was provided, so none is shown.
-- No photographs of completed projects were included with the requirements form, so product sections still use illustrations. The two Drive images are the official logo and an alternate brand mark.
+- Stretch-ceiling and aluminium-glass railing photos were not in the project archive, so those two sections still use illustrations. Other product sections and the Our Work gallery use real project photos.
 - The 3D building is a stylized illustration, not a real project.
 - Netlify Forms only works on Netlify. On Vercel, use a form service if you need submissions stored.
 - The `Content-Security-Policy` in `netlify.toml` / `vercel.json` allows only `self`, jsDelivr and Google Fonts. If you add analytics (e.g. a Meta Pixel or Google Ads tag for your campaigns), add their domains to `script-src`, `img-src` and `connect-src`.

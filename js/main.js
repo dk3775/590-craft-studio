@@ -7,6 +7,7 @@
    GSAP core + ScrollTrigger only (no Club plugins).
    ========================================================================== */
 import { BUSINESS, waLink } from './config.js';
+import { WORK_PHOTOS, WORK_CATEGORIES } from './photos.js';
 import { initLiteJourney } from './mobile-scene.js';
 
 const root = document.documentElement;
@@ -23,15 +24,135 @@ function applyBusinessDetails() {
   document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 }
 
-/* ---------------- optional real photos ---------------- */
+/* ---------------- project photos + gallery + lightbox ---------------- */
 function loadProjectPhotos() {
-  if (!BUSINESS.useProjectPhotos) return;
-  document.querySelectorAll('.photo-row').forEach((row) => {
-    row.hidden = false;
-    row.querySelectorAll('img[data-src]').forEach((img) => {
-      img.addEventListener('error', () => img.remove(), { once: true });
-      img.src = img.dataset.src;
+  const on = BUSINESS.useProjectPhotos;
+  document.querySelectorAll('.photo-row, #work').forEach((el) => { el.hidden = !on; });
+  if (on) initWorkGallery();
+}
+
+function initWorkGallery() {
+  const grid = document.getElementById('work-grid');
+  const filters = document.querySelector('.work__filters');
+  if (!grid || !filters) {
+    initLightbox();
+    return;
+  }
+
+  filters.innerHTML = '';
+  WORK_CATEGORIES.forEach((cat, i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'work__filter';
+    btn.dataset.cat = cat.id;
+    btn.textContent = cat.label;
+    btn.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
+    filters.appendChild(btn);
+  });
+
+  const render = (cat) => {
+    const items = cat === 'all' ? WORK_PHOTOS : WORK_PHOTOS.filter((p) => p.cat === cat);
+    grid.replaceChildren();
+    items.forEach((p) => {
+      const a = document.createElement('a');
+      a.className = 'work__item js-work-photo';
+      a.href = p.src;
+      a.dataset.workId = p.id;
+      a.setAttribute('aria-label', `${p.caption}: ${p.alt}`);
+      const img = document.createElement('img');
+      img.src = p.thumb;
+      img.alt = p.alt;
+      img.width = p.tw;
+      img.height = p.th;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      const cap = document.createElement('span');
+      cap.className = 'work__caption';
+      cap.textContent = p.caption;
+      a.append(img, cap);
+      grid.appendChild(a);
     });
+  };
+
+  filters.addEventListener('click', (e) => {
+    const btn = e.target.closest('.work__filter');
+    if (!btn) return;
+    filters.querySelectorAll('.work__filter').forEach((b) => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+    render(btn.dataset.cat);
+  });
+
+  render('all');
+  initLightbox();
+}
+
+function initLightbox() {
+  const root = document.getElementById('lightbox');
+  if (!root) return;
+  const imgEl = root.querySelector('.lightbox__img');
+  const capEl = root.querySelector('.lightbox__caption');
+  const dialog = root.querySelector('.lightbox__dialog');
+  let index = 0;
+  let lastFocus = null;
+
+  const list = () => WORK_PHOTOS;
+
+  const show = (i) => {
+    const photos = list();
+    if (!photos.length) return;
+    index = (i + photos.length) % photos.length;
+    const p = photos[index];
+    imgEl.src = p.src;
+    imgEl.alt = p.alt;
+    imgEl.width = p.width;
+    imgEl.height = p.height;
+    capEl.textContent = p.caption;
+  };
+
+  const open = (id) => {
+    const photos = list();
+    const found = photos.findIndex((p) => p.id === id);
+    lastFocus = document.activeElement;
+    root.hidden = false;
+    document.body.classList.add('is-lightbox');
+    show(found >= 0 ? found : 0);
+    root.querySelector('[data-lightbox-close]')?.focus();
+  };
+
+  const close = () => {
+    if (root.hidden) return;
+    root.hidden = true;
+    imgEl.removeAttribute('src');
+    document.body.classList.remove('is-lightbox');
+    if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+  };
+
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('.js-work-photo');
+    if (!link) return;
+    const id = link.dataset.workId;
+    if (!id) return;
+    e.preventDefault();
+    open(id);
+  });
+
+  root.addEventListener('click', (e) => {
+    if (e.target === root || e.target.closest('[data-lightbox-close]')) close();
+  });
+  root.querySelector('[data-lightbox-prev]')?.addEventListener('click', (e) => { e.stopPropagation(); show(index - 1); });
+  root.querySelector('[data-lightbox-next]')?.addEventListener('click', (e) => { e.stopPropagation(); show(index + 1); });
+
+  document.addEventListener('keydown', (e) => {
+    if (root.hidden) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(index - 1);
+    else if (e.key === 'ArrowRight') show(index + 1);
+    else if (e.key === 'Tab' && dialog) {
+      const focusable = [...dialog.querySelectorAll('button')];
+      if (!focusable.length) return;
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
   });
 }
 
