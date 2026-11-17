@@ -161,7 +161,11 @@ function initNav() {
   const btn = document.querySelector('.nav-toggle');
   const nav = document.getElementById('site-nav');
   if (!btn || !nav) return;
-  const set = (open) => { btn.setAttribute('aria-expanded', String(open)); nav.classList.toggle('is-open', open); };
+  const set = (open) => {
+    btn.setAttribute('aria-expanded', String(open));
+    nav.classList.toggle('is-open', open);
+    document.body.classList.toggle('nav-open', open);
+  };
   btn.addEventListener('click', () => set(btn.getAttribute('aria-expanded') !== 'true'));
   nav.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('is-open')) { set(false); btn.focus(); } });
@@ -226,13 +230,68 @@ function initForm() {
 /* ---------------- reveals + active nav ---------------- */
 function initReveals(reduce) {
   const items = gsap.utils.toArray('.reveal');
-  if (reduce) return;
+  if (reduce) {
+    gsap.set(items, { autoAlpha: 1, y: 0 });
+    return () => {};
+  }
+
+  const mark = (els) => els.forEach((el) => { el.dataset.revealed = '1'; });
+  const show = (els, immediate) => {
+    if (!els.length) return;
+    mark(els);
+    gsap.to(els, {
+      autoAlpha: 1, y: 0,
+      duration: immediate ? 0.01 : 0.7,
+      ease: 'power3.out',
+      stagger: immediate ? 0 : 0.08,
+      overwrite: true,
+    });
+  };
+  const revealVisible = (immediate) => {
+    const instant = [];
+    const animated = [];
+    for (const el of items) {
+      if (el.dataset.revealed === '1') continue;
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.92 && r.bottom > 40) {
+        if (immediate || r.top < window.innerHeight * 0.8) instant.push(el);
+        else animated.push(el);
+      }
+    }
+    show(instant, true);
+    show(animated, false);
+  };
+
   gsap.set(items, { autoAlpha: 0, y: 36 });
   ScrollTrigger.batch(items, {
     start: 'top 88%',
     once: true,
-    onEnter: (batch) => gsap.to(batch, { autoAlpha: 1, y: 0, duration: 0.9, ease: 'power3.out', stagger: 0.1, overwrite: true }),
+    onEnter: (batch) => {
+      const fresh = batch.filter((el) => el.dataset.revealed !== '1');
+      if (!fresh.length) return;
+      mark(fresh);
+      gsap.to(fresh, { autoAlpha: 1, y: 0, duration: 0.9, ease: 'power3.out', stagger: 0.1, overwrite: true });
+    },
   });
+
+  // Jump links and fast programmatic scrolls can skip batch onEnter; catch anything already in view.
+  const onJump = () => {
+    const run = () => { ScrollTrigger.update(); revealVisible(false); };
+    requestAnimationFrame(() => requestAnimationFrame(run));
+    window.setTimeout(run, 480);
+  };
+  const onClick = (e) => { if (e.target.closest('a[href^="#"]')) onJump(); };
+  const onScrollEnd = () => revealVisible(false);
+  window.addEventListener('hashchange', onJump);
+  window.addEventListener('scrollend', onScrollEnd);
+  document.addEventListener('click', onClick);
+  requestAnimationFrame(() => revealVisible(true));
+
+  return () => {
+    window.removeEventListener('hashchange', onJump);
+    window.removeEventListener('scrollend', onScrollEnd);
+    document.removeEventListener('click', onClick);
+  };
 }
 function initActiveNav() {
   const links = [...document.querySelectorAll('.site-nav a[href^="#"]')];
@@ -388,10 +447,10 @@ function boot() {
       } else {
         liteCleanup = initLiteJourney({ gsap, ScrollTrigger, reduceMotion: reduce });
       }
-      initReveals(reduce);
+      const revealCleanup = initReveals(reduce);
       initActiveNav();
 
-      return () => { cleanup3D(state); liteCleanup && liteCleanup(); };
+      return () => { cleanup3D(state); liteCleanup && liteCleanup(); revealCleanup && revealCleanup(); };
     }
   );
 

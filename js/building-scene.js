@@ -367,8 +367,12 @@ export async function createBuildingScene(container, { hotspotEls = {} } = {}) {
     const radius = cam.radius * (1 + 0.45 * k);
     const lift = cam.lift + 4 * k + Math.sin(time * 0.3) * 0.12;
     const st = Math.sin(theta), ct = Math.cos(theta);
-    // shift the look-at point left so the subject sits right of centre (text panel is on the left)
-    const shift = 0.34 * radius * halfTan * camera.aspect;
+    // Shift the look-at left so the building sits in the right half (copy is on the left).
+    // Narrow / squat frames (e.g. 1024x768) need a stronger shift than 16:9.
+    const aspect = camera.aspect;
+    const t = Math.min(1, Math.max(0, (aspect - 1.25) / 0.55));
+    const shiftAmt = 0.48 - 0.14 * t; // ~0.48 at 4:3, 0.34 at 16:9
+    const shift = shiftAmt * radius * halfTan * aspect;
     look.set(cam.tx - ct * shift, cam.ty, cam.tz + st * shift);
     camera.position.set(look.x + st * radius, look.y + lift, look.z + ct * radius);
     camera.lookAt(look);

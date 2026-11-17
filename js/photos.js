@@ -47,9 +47,9 @@ export const WORK_PHOTOS = [
     "src": "assets/img/work/acp-01.webp",
     "thumb": "assets/img/work/acp-01-sm.webp",
     "width": 1600,
-    "height": 1131,
+    "height": 982,
     "tw": 800,
-    "th": 566
+    "th": 491
   },
   {
     "id": "acp-02",
@@ -58,9 +58,9 @@ export const WORK_PHOTOS = [
     "alt": "ACP cladding being fitted on a building elevation",
     "src": "assets/img/work/acp-02.webp",
     "thumb": "assets/img/work/acp-02-sm.webp",
-    "width": 1132,
+    "width": 1112,
     "height": 1600,
-    "tw": 566,
+    "tw": 556,
     "th": 800
   },
   {
@@ -71,9 +71,9 @@ export const WORK_PHOTOS = [
     "src": "assets/img/work/acp-03.webp",
     "thumb": "assets/img/work/acp-03-sm.webp",
     "width": 1600,
-    "height": 1131,
+    "height": 1111,
     "tw": 800,
-    "th": 566
+    "th": 555
   },
   {
     "id": "acp-04",
@@ -83,9 +83,9 @@ export const WORK_PHOTOS = [
     "src": "assets/img/work/acp-04.webp",
     "thumb": "assets/img/work/acp-04-sm.webp",
     "width": 1600,
-    "height": 1131,
+    "height": 1112,
     "tw": 800,
-    "th": 566
+    "th": 556
   },
   {
     "id": "acp-05",
@@ -95,9 +95,9 @@ export const WORK_PHOTOS = [
     "src": "assets/img/work/acp-05.webp",
     "thumb": "assets/img/work/acp-05-sm.webp",
     "width": 1600,
-    "height": 1131,
+    "height": 1112,
     "tw": 800,
-    "th": 566
+    "th": 556
   },
   {
     "id": "acp-06",
@@ -107,9 +107,9 @@ export const WORK_PHOTOS = [
     "src": "assets/img/work/acp-06.webp",
     "thumb": "assets/img/work/acp-06-sm.webp",
     "width": 1600,
-    "height": 1131,
+    "height": 1157,
     "tw": 800,
-    "th": 566
+    "th": 578
   },
   {
     "id": "fab-01",
@@ -118,9 +118,9 @@ export const WORK_PHOTOS = [
     "alt": "Aluminium-and-glass pavilion",
     "src": "assets/img/work/fab-01.webp",
     "thumb": "assets/img/work/fab-01-sm.webp",
-    "width": 1132,
+    "width": 1114,
     "height": 1600,
-    "tw": 566,
+    "tw": 557,
     "th": 800
   },
   {
@@ -130,9 +130,9 @@ export const WORK_PHOTOS = [
     "alt": "Aluminium-and-glass entrance doors",
     "src": "assets/img/work/fab-02.webp",
     "thumb": "assets/img/work/fab-02-sm.webp",
-    "width": 1132,
+    "width": 1233,
     "height": 1600,
-    "tw": 566,
+    "tw": 617,
     "th": 800
   },
   {
@@ -142,10 +142,10 @@ export const WORK_PHOTOS = [
     "alt": "Prefabricated aluminium cabin",
     "src": "assets/img/work/fab-03.webp",
     "thumb": "assets/img/work/fab-03-sm.webp",
-    "width": 1132,
-    "height": 1600,
-    "tw": 566,
-    "th": 800
+    "width": 1600,
+    "height": 1118,
+    "tw": 800,
+    "th": 559
   },
   {
     "id": "fab-04",
@@ -154,10 +154,10 @@ export const WORK_PHOTOS = [
     "alt": "Aluminium sliding window",
     "src": "assets/img/work/fab-04.webp",
     "thumb": "assets/img/work/fab-04-sm.webp",
-    "width": 1132,
-    "height": 1600,
-    "tw": 566,
-    "th": 800
+    "width": 1600,
+    "height": 1118,
+    "tw": 800,
+    "th": 559
   },
   {
     "id": "fab-05",
@@ -166,10 +166,10 @@ export const WORK_PHOTOS = [
     "alt": "Large aluminium sliding glass doors",
     "src": "assets/img/work/fab-05.webp",
     "thumb": "assets/img/work/fab-05-sm.webp",
-    "width": 1132,
-    "height": 1600,
-    "tw": 566,
-    "th": 800
+    "width": 1600,
+    "height": 1118,
+    "tw": 800,
+    "th": 559
   },
   {
     "id": "fab-06",
@@ -215,9 +215,9 @@ export const WORK_PHOTOS = [
     "src": "assets/img/work/part-01.webp",
     "thumb": "assets/img/work/part-01-sm.webp",
     "width": 1600,
-    "height": 1119,
+    "height": 1136,
     "tw": 800,
-    "th": 559
+    "th": 568
   },
   {
     "id": "part-02",
@@ -250,9 +250,9 @@ export const WORK_PHOTOS = [
     "alt": "Freestanding pylon signboard",
     "src": "assets/img/work/sign-01.webp",
     "thumb": "assets/img/work/sign-01-sm.webp",
-    "width": 1237,
+    "width": 1202,
     "height": 1600,
-    "tw": 618,
+    "tw": 601,
     "th": 800
   },
   {
@@ -262,10 +262,10 @@ export const WORK_PHOTOS = [
     "alt": "Illuminated fascia signboard on a shop front",
     "src": "assets/img/work/sign-02.webp",
     "thumb": "assets/img/work/sign-02-sm.webp",
-    "width": 1600,
-    "height": 976,
-    "tw": 800,
-    "th": 488
+    "width": 1396,
+    "height": 1600,
+    "tw": 698,
+    "th": 800
   },
   {
     "id": "sign-03",
@@ -274,9 +274,9 @@ export const WORK_PHOTOS = [
     "alt": "Lit shop signboard above an entrance",
     "src": "assets/img/work/sign-03.webp",
     "thumb": "assets/img/work/sign-03-sm.webp",
-    "width": 1237,
+    "width": 902,
     "height": 1600,
-    "tw": 618,
+    "tw": 451,
     "th": 800
   },
   {
@@ -286,10 +286,10 @@ export const WORK_PHOTOS = [
     "alt": "Illuminated restaurant signboard at night",
     "src": "assets/img/work/sign-04.webp",
     "thumb": "assets/img/work/sign-04-sm.webp",
-    "width": 1237,
-    "height": 1600,
-    "tw": 618,
-    "th": 800
+    "width": 1600,
+    "height": 1200,
+    "tw": 800,
+    "th": 600
   },
   {
     "id": "sign-05",
@@ -298,9 +298,9 @@ export const WORK_PHOTOS = [
     "alt": "Colourful indoor LED signboard",
     "src": "assets/img/work/sign-05.webp",
     "thumb": "assets/img/work/sign-05-sm.webp",
-    "width": 1237,
+    "width": 1202,
     "height": 1600,
-    "tw": 618,
+    "tw": 601,
     "th": 800
   },
   {
@@ -310,10 +310,10 @@ export const WORK_PHOTOS = [
     "alt": "Backlit signboard on a dark facade",
     "src": "assets/img/work/sign-06.webp",
     "thumb": "assets/img/work/sign-06-sm.webp",
-    "width": 1237,
-    "height": 1600,
-    "tw": 618,
-    "th": 800
+    "width": 1600,
+    "height": 1501,
+    "tw": 800,
+    "th": 751
   },
   {
     "id": "sign-07",
@@ -322,10 +322,10 @@ export const WORK_PHOTOS = [
     "alt": "Outdoor hanging signboard",
     "src": "assets/img/work/sign-07.webp",
     "thumb": "assets/img/work/sign-07-sm.webp",
-    "width": 1600,
-    "height": 1020,
+    "width": 1491,
+    "height": 1093,
     "tw": 800,
-    "th": 510
+    "th": 586
   },
   {
     "id": "sign-08",
@@ -334,10 +334,10 @@ export const WORK_PHOTOS = [
     "alt": "3D letter signboard on a rooftop",
     "src": "assets/img/work/sign-08.webp",
     "thumb": "assets/img/work/sign-08-sm.webp",
-    "width": 1237,
-    "height": 1600,
-    "tw": 618,
-    "th": 800
+    "width": 1600,
+    "height": 900,
+    "tw": 800,
+    "th": 450
   },
   {
     "id": "sign-09",
@@ -346,9 +346,9 @@ export const WORK_PHOTOS = [
     "alt": "Illuminated arch signboard at an entrance",
     "src": "assets/img/work/sign-09.webp",
     "thumb": "assets/img/work/sign-09-sm.webp",
-    "width": 1237,
+    "width": 1200,
     "height": 1600,
-    "tw": 618,
+    "tw": 600,
     "th": 800
   },
   {
@@ -358,9 +358,9 @@ export const WORK_PHOTOS = [
     "alt": "Backlit letter sign on a slatted wall",
     "src": "assets/img/work/letters-01.webp",
     "thumb": "assets/img/work/letters-01-sm.webp",
-    "width": 1237,
+    "width": 1107,
     "height": 1600,
-    "tw": 618,
+    "tw": 553,
     "th": 800
   },
   {
@@ -370,9 +370,9 @@ export const WORK_PHOTOS = [
     "alt": "Gold letter sign on a dark wall",
     "src": "assets/img/work/letters-02.webp",
     "thumb": "assets/img/work/letters-02-sm.webp",
-    "width": 1237,
+    "width": 1202,
     "height": 1600,
-    "tw": 618,
+    "tw": 601,
     "th": 800
   },
   {
@@ -382,9 +382,9 @@ export const WORK_PHOTOS = [
     "alt": "Illuminated dental clinic letter sign",
     "src": "assets/img/work/letters-03.webp",
     "thumb": "assets/img/work/letters-03-sm.webp",
-    "width": 1237,
+    "width": 1199,
     "height": 1600,
-    "tw": 618,
+    "tw": 600,
     "th": 800
   },
   {
@@ -394,9 +394,9 @@ export const WORK_PHOTOS = [
     "alt": "Acrylic letter sign on a wood-panel wall",
     "src": "assets/img/work/letters-04.webp",
     "thumb": "assets/img/work/letters-04-sm.webp",
-    "width": 1237,
+    "width": 1201,
     "height": 1600,
-    "tw": 618,
+    "tw": 600,
     "th": 800
   },
   {
@@ -406,9 +406,9 @@ export const WORK_PHOTOS = [
     "alt": "Acrylic office letter sign",
     "src": "assets/img/work/letters-05.webp",
     "thumb": "assets/img/work/letters-05-sm.webp",
-    "width": 1237,
+    "width": 1600,
     "height": 1600,
-    "tw": 618,
+    "tw": 800,
     "th": 800
   },
   {
@@ -418,9 +418,9 @@ export const WORK_PHOTOS = [
     "alt": "Backlit figure letter sign",
     "src": "assets/img/work/letters-06.webp",
     "thumb": "assets/img/work/letters-06-sm.webp",
-    "width": 1237,
+    "width": 1201,
     "height": 1600,
-    "tw": 618,
+    "tw": 600,
     "th": 800
   },
   {
@@ -430,9 +430,9 @@ export const WORK_PHOTOS = [
     "alt": "Raised letter sign in a reception",
     "src": "assets/img/work/letters-07.webp",
     "thumb": "assets/img/work/letters-07-sm.webp",
-    "width": 1237,
+    "width": 1371,
     "height": 1600,
-    "tw": 618,
+    "tw": 685,
     "th": 800
   },
   {
@@ -442,9 +442,9 @@ export const WORK_PHOTOS = [
     "alt": "Illuminated box letter sign on a shop fascia",
     "src": "assets/img/work/letters-08.webp",
     "thumb": "assets/img/work/letters-08-sm.webp",
-    "width": 1237,
+    "width": 987,
     "height": 1600,
-    "tw": 618,
+    "tw": 494,
     "th": 800
   },
   {
@@ -454,9 +454,9 @@ export const WORK_PHOTOS = [
     "alt": "Illuminated circular name plate",
     "src": "assets/img/work/name-01.webp",
     "thumb": "assets/img/work/name-01-sm.webp",
-    "width": 1237,
+    "width": 1201,
     "height": 1600,
-    "tw": 618,
+    "tw": 601,
     "th": 800
   },
   {
@@ -466,9 +466,9 @@ export const WORK_PHOTOS = [
     "alt": "Backlit name plate with a leaf motif",
     "src": "assets/img/work/name-02.webp",
     "thumb": "assets/img/work/name-02-sm.webp",
-    "width": 1237,
+    "width": 1491,
     "height": 1600,
-    "tw": 618,
+    "tw": 745,
     "th": 800
   },
   {
@@ -478,9 +478,9 @@ export const WORK_PHOTOS = [
     "alt": "Gold name plate on a stone wall",
     "src": "assets/img/work/name-03.webp",
     "thumb": "assets/img/work/name-03-sm.webp",
-    "width": 1237,
+    "width": 1563,
     "height": 1600,
-    "tw": 618,
+    "tw": 781,
     "th": 800
   },
   {
@@ -490,9 +490,9 @@ export const WORK_PHOTOS = [
     "alt": "Circular gold name plate",
     "src": "assets/img/work/name-04.webp",
     "thumb": "assets/img/work/name-04-sm.webp",
-    "width": 1237,
+    "width": 1360,
     "height": 1600,
-    "tw": 618,
+    "tw": 680,
     "th": 800
   },
   {
@@ -514,9 +514,9 @@ export const WORK_PHOTOS = [
     "alt": "Circular name plate with gold lettering",
     "src": "assets/img/work/name-06.webp",
     "thumb": "assets/img/work/name-06-sm.webp",
-    "width": 1237,
+    "width": 1200,
     "height": 1600,
-    "tw": 618,
+    "tw": 600,
     "th": 800
   },
   {
@@ -526,9 +526,9 @@ export const WORK_PHOTOS = [
     "alt": "Custom neon sign in the shape of a flamingo",
     "src": "assets/img/work/neon-01.webp",
     "thumb": "assets/img/work/neon-01-sm.webp",
-    "width": 1237,
+    "width": 1201,
     "height": 1600,
-    "tw": 618,
+    "tw": 601,
     "th": 800
   },
   {
@@ -538,9 +538,9 @@ export const WORK_PHOTOS = [
     "alt": "Custom neon pizza sign",
     "src": "assets/img/work/neon-02.webp",
     "thumb": "assets/img/work/neon-02-sm.webp",
-    "width": 1237,
+    "width": 1068,
     "height": 1600,
-    "tw": 618,
+    "tw": 534,
     "th": 800
   },
   {
@@ -550,9 +550,9 @@ export const WORK_PHOTOS = [
     "alt": "Script neon wall sign",
     "src": "assets/img/work/neon-03.webp",
     "thumb": "assets/img/work/neon-03-sm.webp",
-    "width": 1237,
+    "width": 1600,
     "height": 1600,
-    "tw": 618,
+    "tw": 800,
     "th": 800
   },
   {
@@ -562,9 +562,9 @@ export const WORK_PHOTOS = [
     "alt": "Custom neon lettering in Devanagari",
     "src": "assets/img/work/neon-04.webp",
     "thumb": "assets/img/work/neon-04-sm.webp",
-    "width": 1237,
+    "width": 1600,
     "height": 1600,
-    "tw": 618,
+    "tw": 800,
     "th": 800
   },
   {
@@ -574,10 +574,10 @@ export const WORK_PHOTOS = [
     "alt": "Script neon sign on a dark wall",
     "src": "assets/img/work/neon-05.webp",
     "thumb": "assets/img/work/neon-05-sm.webp",
-    "width": 1237,
-    "height": 1600,
-    "tw": 618,
-    "th": 800
+    "width": 1600,
+    "height": 1443,
+    "tw": 800,
+    "th": 722
   },
   {
     "id": "neon-06",
@@ -586,9 +586,9 @@ export const WORK_PHOTOS = [
     "alt": "Neon bar sign with a bottle motif",
     "src": "assets/img/work/neon-06.webp",
     "thumb": "assets/img/work/neon-06-sm.webp",
-    "width": 1237,
+    "width": 1600,
     "height": 1600,
-    "tw": 618,
+    "tw": 800,
     "th": 800
   },
   {
@@ -598,9 +598,9 @@ export const WORK_PHOTOS = [
     "alt": "Pink script neon sign",
     "src": "assets/img/work/neon-07.webp",
     "thumb": "assets/img/work/neon-07-sm.webp",
-    "width": 1237,
-    "height": 1600,
-    "tw": 618,
-    "th": 800
+    "width": 1600,
+    "height": 1198,
+    "tw": 800,
+    "th": 599
   }
 ];
